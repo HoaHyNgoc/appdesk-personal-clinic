@@ -1,0 +1,9 @@
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\presentation_layer.exe.config
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\presentation_layer.exe
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\presentation_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csprojAssemblyReference.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.Properties.Resources.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csproj.GenerateResource.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csproj.CoreCompileInputs.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.exe
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.pdb
