@@ -1,0 +1,6 @@
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\bin\Debug\data_transfer_object.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\bin\Debug\data_transfer_object.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\obj\Debug\data_transfer_object.csprojAssemblyReference.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\obj\Debug\data_transfer_object.csproj.CoreCompileInputs.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\obj\Debug\data_transfer_object.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\data_transfer_object\obj\Debug\data_transfer_object.pdb
