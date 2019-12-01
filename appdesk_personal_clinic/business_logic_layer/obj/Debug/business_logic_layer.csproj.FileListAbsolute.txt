@@ -1,0 +1,6 @@
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\bin\Debug\business_logic_layer.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\bin\Debug\business_logic_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\obj\Debug\business_logic_layer.csprojAssemblyReference.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\obj\Debug\business_logic_layer.csproj.CoreCompileInputs.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\obj\Debug\business_logic_layer.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\business_logic_layer\obj\Debug\business_logic_layer.pdb

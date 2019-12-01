@@ -1,0 +1,6 @@
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\bin\Debug\database_deployment.dacpac
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\bin\Debug\database_deployment.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\bin\Debug\database_deployment.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.sqlprojAssemblyReference.cache
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.pdb
