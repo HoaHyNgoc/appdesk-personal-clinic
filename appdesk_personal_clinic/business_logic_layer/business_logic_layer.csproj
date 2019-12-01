@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoctorBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\database_access_layer\database_access_layer.csproj">
+      <Project>{aecb7993-ec1c-4ae9-acf2-847a681c18d8}</Project>
+      <Name>database_access_layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\data_transfer_object\data_transfer_object.csproj">
+      <Project>{abaf3107-20b8-42b2-9532-d83b4af48906}</Project>
+      <Name>data_transfer_object</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

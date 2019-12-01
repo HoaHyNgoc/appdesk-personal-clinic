@@ -7,3 +7,12 @@ D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csproj.CoreCompileInputs.cache
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.exe
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\business_logic_layer.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\database_access_layer.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\data_transfer_object.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\business_logic_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\database_access_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\database_access_layer.dll.config
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\bin\Debug\data_transfer_object.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.search_screen.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csproj.CopyComplete

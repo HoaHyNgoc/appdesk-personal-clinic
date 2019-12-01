@@ -4,3 +4,7 @@ D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_la
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\obj\Debug\database_access_layer.csproj.CoreCompileInputs.cache
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\obj\Debug\database_access_layer.dll
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\obj\Debug\database_access_layer.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\bin\Debug\database_access_layer.dll.config
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\bin\Debug\data_transfer_object.dll
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\bin\Debug\data_transfer_object.pdb
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_access_layer\obj\Debug\database_access_layer.csproj.CopyComplete
