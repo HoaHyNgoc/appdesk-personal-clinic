@@ -23,3 +23,4 @@ Post-Deployment Script Template
 --(11, '16520003', 'Jack', 0),
 --(12, '16520004', 'Kari', 0),
 --(12, '16520005', 'Erik', 0);
+GO

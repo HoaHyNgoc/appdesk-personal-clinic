@@ -30,7 +30,7 @@
         {
             this.dgvDoctor = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInsertDoctor = new System.Windows.Forms.Button();
             this.btnUpdateDoctor = new System.Windows.Forms.Button();
             this.lbidDoctor = new System.Windows.Forms.Label();
             this.tbxFullnameDoctor = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbxSpecialist);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnInsertDoctor);
             this.groupBox1.Controls.Add(this.btnUpdateDoctor);
             this.groupBox1.Controls.Add(this.lbidDoctor);
             this.groupBox1.Controls.Add(this.tbxFullnameDoctor);
@@ -72,14 +72,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button2
+            // btnInsertDoctor
             // 
-            this.button2.Location = new System.Drawing.Point(332, 139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInsertDoctor.Location = new System.Drawing.Point(332, 139);
+            this.btnInsertDoctor.Name = "btnInsertDoctor";
+            this.btnInsertDoctor.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertDoctor.TabIndex = 6;
+            this.btnInsertDoctor.Text = "Insert";
+            this.btnInsertDoctor.UseVisualStyleBackColor = true;
+            this.btnInsertDoctor.Click += new System.EventHandler(this.btnInsertDoctor_Click);
             // 
             // btnUpdateDoctor
             // 
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Label lbidSpecialist;
         private System.Windows.Forms.TextBox tbxFullnameDoctor;
         private System.Windows.Forms.Label lbidDoctor;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInsertDoctor;
         private System.Windows.Forms.Button btnUpdateDoctor;
         private System.Windows.Forms.ComboBox cbxSpecialist;
     }

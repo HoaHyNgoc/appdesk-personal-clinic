@@ -29,9 +29,20 @@ namespace database_access_layer
                 originalDoctor.FullName,
                 originalDoctor.IsGeneral,
                 originalDoctor.IdDoctor
-            );
+                );
 
             return flagUpdate;
+        }
+
+        public int insertCoreDoctor(DoctorDTO newDoctor) {
+            int flagInsert = new DOCTORTableAdapter().insertDoctorQuery(
+                    newDoctor.IdSpecialist,
+                    newDoctor.IdPassport,
+                    newDoctor.FullName,
+                    newDoctor.IsGeneral
+                );
+
+            return flagInsert;
         }
 
         #endregion CRUD Methods

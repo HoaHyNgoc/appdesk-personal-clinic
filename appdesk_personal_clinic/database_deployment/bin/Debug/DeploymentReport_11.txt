@@ -1,0 +1,37 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[BILL] (Table)
+       [dbo].[DETAIL_PRESCRIPTION] (Table)
+       [dbo].[DETAIL_TECHNIQUE] (Table)
+       [dbo].[DIAGNOSTIC] (Table)
+       [dbo].[MEDICAL_RECORD] (Table)
+       [dbo].[MEDICINE] (Table)
+       [dbo].[PHARMACIST] (Table)
+       [dbo].[PRESCRIPTION] (Table)
+       [dbo].[TECHNIQUE] (Table)
+       [dbo].[UNIT_MEDICINE] (Table)
+       [dbo].[FK_idPrescriptionBill_ToPRESCRIPTION] (Foreign Key)
+       [dbo].[FK_idTechniqueBill_ToTECHNIQUE] (Foreign Key)
+       [dbo].[FK_idPharmacist_ToPHARMACIST] (Foreign Key)
+       [dbo].[FK_idPrescriptionDetailPre_ToPRESCRIPTION] (Foreign Key)
+       [dbo].[FK_idMedicineDetailPre_ToMEDICINE] (Foreign Key)
+       [dbo].[FK_idTechniqueDetailTech_ToTECHNIQUE] (Foreign Key)
+       [dbo].[FK_idDiagnosticDetailTech_ToDIAGNOSTIC] (Foreign Key)
+       [dbo].[FK_idSpecialistDiagnostic_ToSPECIALIST] (Foreign Key)
+       [dbo].[FK_idPatientMedicalRecord_ToPATIENT] (Foreign Key)
+       [dbo].[FK_idDoctorMedicalRecord_ToDOCTOR] (Foreign Key)
+       [dbo].[FK_idUnitMedicineMedicine_ToUNIT_MEDICINE] (Foreign Key)
+       [dbo].[FK_idPatientPrescription_ToPATIENT] (Foreign Key)
+       [dbo].[FK_idDoctorTechnique_ToDOCTOR] (Foreign Key)
+
+** Supporting actions

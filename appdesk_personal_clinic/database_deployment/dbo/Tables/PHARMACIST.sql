@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[PHARMACIST]
+(
+	[idPharmacist] INT NOT NULL PRIMARY KEY IDENTITY(7000, 1), 
+    [idPassport] NVARCHAR(20) NOT NULL, 
+    [fullName] NVARCHAR(50) NOT NULL
+)
