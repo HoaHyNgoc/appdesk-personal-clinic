@@ -39,6 +39,21 @@ namespace business_logic_layer
             return doctorDal.updateCoreDoctor(currentDoctorDatarow);
         }
 
+        public int insertDoctor(
+            string idSpecialist,
+            string idPassport,
+            string fullName,
+            string isGeneral) {
+
+            DoctorDTO currentDoctorDatarow = new DoctorDTO();
+            currentDoctorDatarow.IdSpecialist = Convert.ToInt32(idSpecialist);
+            currentDoctorDatarow.IdPassport = Convert.ToString(idPassport);
+            currentDoctorDatarow.FullName = Convert.ToString(fullName);
+            currentDoctorDatarow.IsGeneral = Convert.ToInt32(isGeneral);
+
+            return doctorDal.insertCoreDoctor(currentDoctorDatarow);
+        }
+
         #endregion Logical CRUD Methods
     }
 }

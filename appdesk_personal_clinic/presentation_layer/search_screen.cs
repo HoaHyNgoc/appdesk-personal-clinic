@@ -50,6 +50,24 @@ namespace presentation_layer
                 );
         }
 
+        public void insertDataPointDoctor(
+            string idSpecialistUI,
+            string idPassportUI,
+            string fullNameUI,
+            string isGeneralUI
+            )
+        {
+            doctorBus.insertDoctor(
+                idSpecialistUI,
+                idPassportUI,
+                fullNameUI,
+                isGeneralUI
+                );
+        }
+
+
+        #endregion CRUD
+
         public bool fillCurrentRowDataDoctorToControl()
         {
             tbxPassportDoctor.Text = dgvDoctor.CurrentRow.Cells["idPassport"].Value.ToString();
@@ -60,8 +78,6 @@ namespace presentation_layer
 
             return true;
         }
-
-        #endregion CRUD
 
         #endregion Methods
 
@@ -92,6 +108,17 @@ namespace presentation_layer
             getDataGrid();
         }
 
+        private void btnInsertDoctor_Click(object sender, EventArgs e)
+        {
+            insertDataPointDoctor(
+                cbxSpecialist.Text,
+                tbxPassportDoctor.Text,
+                tbxFullnameDoctor.Text,
+                lbisGeneral.Text
+                );
+
+            getDataGrid();
+        }
         #endregion Events
     }
 }

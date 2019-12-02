@@ -66,11 +66,24 @@
     <Build Include="dbo\Tables\DOCTOR.sql" />
     <Build Include="dbo\Tables\PATIENT.sql" />
     <Build Include="dbo\Tables\SPECIALIST.sql" />
+    <Build Include="dbo\Tables\TECHNIQUE.sql" />
+    <Build Include="dbo\Tables\DETAIL_TECHNIQUE.sql" />
+    <Build Include="dbo\Tables\DIAGNOSTIC.sql" />
+    <Build Include="dbo\Tables\MEDICAL_RECORD.sql" />
+    <Build Include="dbo\Tables\PHARMACIST.sql" />
+    <Build Include="dbo\Tables\UNIT_MEDICINE.sql" />
+    <Build Include="dbo\Tables\MEDICINE.sql" />
+    <Build Include="dbo\Tables\PRESCRIPTION.sql" />
+    <Build Include="dbo\Tables\DETAIL_PRESCRIPTION.sql" />
+    <Build Include="dbo\Tables\BILL.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="publish_locations\database_deployment.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="post_pulish_scripts\Script.Deployments.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="database_deployment.refactorlog" />
   </ItemGroup>
 </Project>
