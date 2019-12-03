@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="screen_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen_admin.Designer.cs">
+      <DependentUpon>screen_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="center_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +60,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="doctor_ui\screen_create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctor_ui\screen_create.Designer.cs">
+      <DependentUpon>screen_create.cs</DependentUpon>
+    </Compile>
     <Compile Include="search_screen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="search_screen.Designer.cs">
       <DependentUpon>search_screen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="screen_admin.resx">
+      <DependentUpon>screen_admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

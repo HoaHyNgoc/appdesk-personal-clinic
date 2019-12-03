@@ -4,7 +4,3 @@ D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deploymen
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.sqlprojAssemblyReference.cache
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.dll
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\database_deployment.pdb
-D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\Model.xml
-D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\refactor.xml
-D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\postdeploy.sql
-D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\database_deployment\obj\Debug\predeploy.sql
