@@ -48,11 +48,7 @@
             this.doctorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pharmacistToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.getDatapointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doctorToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pharmacistToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.meiMedicine = new System.Windows.Forms.ToolStripMenuItem();
             this.unitMedicineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prescriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +73,7 @@
             this.importDatapointToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.doctorToolStripMenuItem,
             this.pharmacistToolStripMenuItem,
-            this.getDatapointToolStripMenuItem});
+            this.meiMedicine});
             this.importDatapointToolStripMenuItem.Name = "importDatapointToolStripMenuItem";
             this.importDatapointToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.importDatapointToolStripMenuItem.Text = "Rest API";
@@ -106,26 +102,25 @@
             // createDoctor
             // 
             this.createDoctor.Name = "createDoctor";
-            this.createDoctor.Size = new System.Drawing.Size(180, 22);
+            this.createDoctor.Size = new System.Drawing.Size(112, 22);
             this.createDoctor.Text = "Create";
-            this.createDoctor.Click += new System.EventHandler(this.createDoctor_Click);
             // 
             // readToolStripMenuItem
             // 
             this.readToolStripMenuItem.Name = "readToolStripMenuItem";
-            this.readToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.readToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.readToolStripMenuItem.Text = "Read";
             // 
             // updateToolStripMenuItem1
             // 
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.updateToolStripMenuItem1.Text = "Update";
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             // 
             // updateToolStripMenuItem
@@ -197,61 +192,34 @@
             // doctorToolStripMenuItem1
             // 
             this.doctorToolStripMenuItem1.Name = "doctorToolStripMenuItem1";
-            this.doctorToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.doctorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.doctorToolStripMenuItem1.Text = "Specialist";
             // 
             // pharmacistToolStripMenuItem1
             // 
             this.pharmacistToolStripMenuItem1.Name = "pharmacistToolStripMenuItem1";
-            this.pharmacistToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.pharmacistToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pharmacistToolStripMenuItem1.Text = "Diagnostic";
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.patientToolStripMenuItem.Text = "Technique";
             // 
-            // getDatapointToolStripMenuItem
+            // meiMedicine
             // 
-            this.getDatapointToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.doctorToolStripMenuItem2,
-            this.pharmacistToolStripMenuItem2,
-            this.updateToolStripMenuItem2,
-            this.deleteToolStripMenuItem2,
+            this.meiMedicine.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.unitMedicineToolStripMenuItem});
-            this.getDatapointToolStripMenuItem.Name = "getDatapointToolStripMenuItem";
-            this.getDatapointToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.getDatapointToolStripMenuItem.Text = "Medicine";
-            // 
-            // doctorToolStripMenuItem2
-            // 
-            this.doctorToolStripMenuItem2.Name = "doctorToolStripMenuItem2";
-            this.doctorToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
-            this.doctorToolStripMenuItem2.Text = "Create";
-            // 
-            // pharmacistToolStripMenuItem2
-            // 
-            this.pharmacistToolStripMenuItem2.Name = "pharmacistToolStripMenuItem2";
-            this.pharmacistToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
-            this.pharmacistToolStripMenuItem2.Text = "Read";
-            // 
-            // updateToolStripMenuItem2
-            // 
-            this.updateToolStripMenuItem2.Name = "updateToolStripMenuItem2";
-            this.updateToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
-            this.updateToolStripMenuItem2.Text = "Update";
-            // 
-            // deleteToolStripMenuItem2
-            // 
-            this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
-            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
-            this.deleteToolStripMenuItem2.Text = "Delete";
+            this.meiMedicine.Name = "meiMedicine";
+            this.meiMedicine.Size = new System.Drawing.Size(180, 22);
+            this.meiMedicine.Text = "Medicine";
+            this.meiMedicine.Click += new System.EventHandler(this.meiMedicine_Click);
             // 
             // unitMedicineToolStripMenuItem
             // 
             this.unitMedicineToolStripMenuItem.Name = "unitMedicineToolStripMenuItem";
-            this.unitMedicineToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.unitMedicineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.unitMedicineToolStripMenuItem.Text = "Unit Medicine";
             // 
             // reportToolStripMenuItem
@@ -313,16 +281,12 @@
         private System.Windows.Forms.ToolStripMenuItem doctorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pharmacistToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem getDatapointToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem doctorToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem pharmacistToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem meiMedicine;
         private System.Windows.Forms.ToolStripMenuItem medicineToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem createDoctor;
         private System.Windows.Forms.ToolStripMenuItem readToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem unitMedicineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem readToolStripMenuItem1;

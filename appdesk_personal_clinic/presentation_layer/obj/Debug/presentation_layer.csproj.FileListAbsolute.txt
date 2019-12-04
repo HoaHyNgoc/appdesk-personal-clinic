@@ -17,3 +17,6 @@ D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.search_screen.resources
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.csproj.CopyComplete
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.screen_admin.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.admin_root_ui.rest_ui.medicine_ui.create_medicin_screen.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.admin_root_ui.rest_ui.medicine_ui.update_medicine_screen.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.center_screen.resources
