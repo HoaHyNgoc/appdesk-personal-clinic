@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoctorDTO.cs" />
+    <Compile Include="MedicineDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialistDTO.cs" />
+    <Compile Include="UnitMedicineDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

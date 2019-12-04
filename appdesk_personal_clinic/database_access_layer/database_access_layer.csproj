@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="dbConnection.cs" />
     <Compile Include="DoctorDAL.cs" />
+    <Compile Include="MedicineDAL.cs" />
     <Compile Include="PersonalClinicDataSet.cs">
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
     </Compile>
@@ -58,6 +59,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SpecialistDAL.cs" />
+    <Compile Include="UnitMedicineDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+#region UI namespace
+
+using presentation_layer.admin_root_ui.rest_ui.medicine_ui;
+
+#endregion UI namespace
+
 namespace presentation_layer
 {
     public partial class screen_admin : Form
@@ -17,10 +23,18 @@ namespace presentation_layer
             InitializeComponent();
         }
 
-        private void createDoctor_Click(object sender, EventArgs e)
+        #region Events MenuItem
+
+        #region CRUD Medicine
+
+        private void meiMedicine_Click(object sender, EventArgs e)
         {
-            Form form = new screen_create();
-            form.Show();
+            Form frmCreatMedicine = new create_medicin_screen();
+            frmCreatMedicine.Show();
         }
+
+        #endregion CRUD Medicine
+
+        #endregion Events MenuItem
     }
 }

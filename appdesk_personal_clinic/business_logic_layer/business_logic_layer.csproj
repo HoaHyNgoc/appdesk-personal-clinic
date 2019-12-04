@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoctorBUS.cs" />
+    <Compile Include="MedicineBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitMedicineBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\database_access_layer\database_access_layer.csproj">
