@@ -31,6 +31,20 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tpPatient = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnClearPatient = new System.Windows.Forms.Button();
+            this.btnInsertPatient = new System.Windows.Forms.Button();
+            this.cbxStatusPatient = new System.Windows.Forms.ComboBox();
+            this.tbxBirthdayPatient = new System.Windows.Forms.TextBox();
+            this.tbxFullNamePatient = new System.Windows.Forms.TextBox();
+            this.tbxidPassportPatient = new System.Windows.Forms.TextBox();
+            this.lbinsertIdPatient = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,8 +63,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefeshGridPatient = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxSearchPatient = new System.Windows.Forms.TextBox();
             this.tbMedicalRecord = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -78,24 +93,11 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tpPrescription = new System.Windows.Forms.TabPage();
-            this.btnRefeshGridPatient = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.cbxStatusPatient = new System.Windows.Forms.ComboBox();
-            this.tbxBirthdayPatient = new System.Windows.Forms.TextBox();
-            this.tbxFullNamePatient = new System.Windows.Forms.TextBox();
-            this.tbxidPassportPatient = new System.Windows.Forms.TextBox();
-            this.lbinsertIdPatient = new System.Windows.Forms.Label();
-            this.btnInsertPatient = new System.Windows.Forms.Button();
-            this.btnClearPatient = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -112,8 +114,6 @@
             this.tpTechnical.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -150,6 +150,139 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create new patien";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btnClearPatient);
+            this.panel9.Controls.Add(this.btnInsertPatient);
+            this.panel9.Controls.Add(this.cbxStatusPatient);
+            this.panel9.Controls.Add(this.tbxBirthdayPatient);
+            this.panel9.Controls.Add(this.tbxFullNamePatient);
+            this.panel9.Controls.Add(this.tbxidPassportPatient);
+            this.panel9.Controls.Add(this.lbinsertIdPatient);
+            this.panel9.Location = new System.Drawing.Point(285, 13);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(418, 161);
+            this.panel9.TabIndex = 2;
+            // 
+            // btnClearPatient
+            // 
+            this.btnClearPatient.Location = new System.Drawing.Point(326, 133);
+            this.btnClearPatient.Name = "btnClearPatient";
+            this.btnClearPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnClearPatient.TabIndex = 4;
+            this.btnClearPatient.Text = "Clear";
+            this.btnClearPatient.UseVisualStyleBackColor = true;
+            this.btnClearPatient.Click += new System.EventHandler(this.btnClearPatient_Click);
+            // 
+            // btnInsertPatient
+            // 
+            this.btnInsertPatient.Location = new System.Drawing.Point(245, 133);
+            this.btnInsertPatient.Name = "btnInsertPatient";
+            this.btnInsertPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertPatient.TabIndex = 3;
+            this.btnInsertPatient.Text = "Insert";
+            this.btnInsertPatient.UseVisualStyleBackColor = true;
+            this.btnInsertPatient.Click += new System.EventHandler(this.btnInsertPatient_Click);
+            // 
+            // cbxStatusPatient
+            // 
+            this.cbxStatusPatient.FormattingEnabled = true;
+            this.cbxStatusPatient.Items.AddRange(new object[] {
+            "Bad",
+            "Good"});
+            this.cbxStatusPatient.Location = new System.Drawing.Point(6, 109);
+            this.cbxStatusPatient.Name = "cbxStatusPatient";
+            this.cbxStatusPatient.Size = new System.Drawing.Size(100, 21);
+            this.cbxStatusPatient.TabIndex = 8;
+            // 
+            // tbxBirthdayPatient
+            // 
+            this.tbxBirthdayPatient.Location = new System.Drawing.Point(6, 83);
+            this.tbxBirthdayPatient.Name = "tbxBirthdayPatient";
+            this.tbxBirthdayPatient.Size = new System.Drawing.Size(100, 20);
+            this.tbxBirthdayPatient.TabIndex = 6;
+            // 
+            // tbxFullNamePatient
+            // 
+            this.tbxFullNamePatient.Location = new System.Drawing.Point(6, 58);
+            this.tbxFullNamePatient.Name = "tbxFullNamePatient";
+            this.tbxFullNamePatient.Size = new System.Drawing.Size(182, 20);
+            this.tbxFullNamePatient.TabIndex = 5;
+            // 
+            // tbxidPassportPatient
+            // 
+            this.tbxidPassportPatient.Location = new System.Drawing.Point(6, 32);
+            this.tbxidPassportPatient.Name = "tbxidPassportPatient";
+            this.tbxidPassportPatient.Size = new System.Drawing.Size(143, 20);
+            this.tbxidPassportPatient.TabIndex = 4;
+            // 
+            // lbinsertIdPatient
+            // 
+            this.lbinsertIdPatient.AutoSize = true;
+            this.lbinsertIdPatient.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbinsertIdPatient.Location = new System.Drawing.Point(9, 14);
+            this.lbinsertIdPatient.Name = "lbinsertIdPatient";
+            this.lbinsertIdPatient.Size = new System.Drawing.Size(96, 13);
+            this.lbinsertIdPatient.TabIndex = 3;
+            this.lbinsertIdPatient.Text = "Automation identify";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.label9);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Location = new System.Drawing.Point(180, 13);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(99, 142);
+            this.panel8.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Health status:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Birthday:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Full name:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Id passport:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Id patient:";
             // 
             // groupBox1
             // 
@@ -324,11 +457,21 @@
             // 
             this.panel1.Controls.Add(this.btnRefeshGridPatient);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tbxSearchPatient);
             this.panel1.Location = new System.Drawing.Point(6, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(349, 46);
             this.panel1.TabIndex = 1;
+            // 
+            // btnRefeshGridPatient
+            // 
+            this.btnRefeshGridPatient.Location = new System.Drawing.Point(263, 12);
+            this.btnRefeshGridPatient.Name = "btnRefeshGridPatient";
+            this.btnRefeshGridPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnRefeshGridPatient.TabIndex = 3;
+            this.btnRefeshGridPatient.Text = "Refesh";
+            this.btnRefeshGridPatient.UseVisualStyleBackColor = true;
+            this.btnRefeshGridPatient.Click += new System.EventHandler(this.btnRefeshGridPatient_Click);
             // 
             // btnSearch
             // 
@@ -339,12 +482,13 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbxSearchPatient
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbxSearchPatient.Location = new System.Drawing.Point(3, 14);
+            this.tbxSearchPatient.Name = "tbxSearchPatient";
+            this.tbxSearchPatient.Size = new System.Drawing.Size(173, 20);
+            this.tbxSearchPatient.TabIndex = 0;
+            this.tbxSearchPatient.TextChanged += new System.EventHandler(this.tbxSearchPatient_TextChanged);
             // 
             // tbMedicalRecord
             // 
@@ -609,149 +753,6 @@
             this.tpPrescription.Text = "Prescription";
             this.tpPrescription.UseVisualStyleBackColor = true;
             // 
-            // btnRefeshGridPatient
-            // 
-            this.btnRefeshGridPatient.Location = new System.Drawing.Point(263, 12);
-            this.btnRefeshGridPatient.Name = "btnRefeshGridPatient";
-            this.btnRefeshGridPatient.Size = new System.Drawing.Size(75, 23);
-            this.btnRefeshGridPatient.TabIndex = 3;
-            this.btnRefeshGridPatient.Text = "Refesh";
-            this.btnRefeshGridPatient.UseVisualStyleBackColor = true;
-            this.btnRefeshGridPatient.Click += new System.EventHandler(this.btnRefeshGridPatient_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.label9);
-            this.panel8.Controls.Add(this.label10);
-            this.panel8.Location = new System.Drawing.Point(180, 13);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(99, 142);
-            this.panel8.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 116);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Health status:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Birthday:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 65);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Full name:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Id passport:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 14);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Id patient:";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btnClearPatient);
-            this.panel9.Controls.Add(this.btnInsertPatient);
-            this.panel9.Controls.Add(this.cbxStatusPatient);
-            this.panel9.Controls.Add(this.tbxBirthdayPatient);
-            this.panel9.Controls.Add(this.tbxFullNamePatient);
-            this.panel9.Controls.Add(this.tbxidPassportPatient);
-            this.panel9.Controls.Add(this.lbinsertIdPatient);
-            this.panel9.Location = new System.Drawing.Point(285, 13);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(418, 161);
-            this.panel9.TabIndex = 2;
-            // 
-            // cbxStatusPatient
-            // 
-            this.cbxStatusPatient.FormattingEnabled = true;
-            this.cbxStatusPatient.Items.AddRange(new object[] {
-            "Bad",
-            "Good"});
-            this.cbxStatusPatient.Location = new System.Drawing.Point(6, 109);
-            this.cbxStatusPatient.Name = "cbxStatusPatient";
-            this.cbxStatusPatient.Size = new System.Drawing.Size(100, 21);
-            this.cbxStatusPatient.TabIndex = 8;
-            // 
-            // tbxBirthdayPatient
-            // 
-            this.tbxBirthdayPatient.Location = new System.Drawing.Point(6, 83);
-            this.tbxBirthdayPatient.Name = "tbxBirthdayPatient";
-            this.tbxBirthdayPatient.Size = new System.Drawing.Size(100, 20);
-            this.tbxBirthdayPatient.TabIndex = 6;
-            // 
-            // tbxFullNamePatient
-            // 
-            this.tbxFullNamePatient.Location = new System.Drawing.Point(6, 58);
-            this.tbxFullNamePatient.Name = "tbxFullNamePatient";
-            this.tbxFullNamePatient.Size = new System.Drawing.Size(182, 20);
-            this.tbxFullNamePatient.TabIndex = 5;
-            // 
-            // tbxidPassportPatient
-            // 
-            this.tbxidPassportPatient.Location = new System.Drawing.Point(6, 32);
-            this.tbxidPassportPatient.Name = "tbxidPassportPatient";
-            this.tbxidPassportPatient.Size = new System.Drawing.Size(143, 20);
-            this.tbxidPassportPatient.TabIndex = 4;
-            // 
-            // lbinsertIdPatient
-            // 
-            this.lbinsertIdPatient.AutoSize = true;
-            this.lbinsertIdPatient.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lbinsertIdPatient.Location = new System.Drawing.Point(9, 14);
-            this.lbinsertIdPatient.Name = "lbinsertIdPatient";
-            this.lbinsertIdPatient.Size = new System.Drawing.Size(96, 13);
-            this.lbinsertIdPatient.TabIndex = 3;
-            this.lbinsertIdPatient.Text = "Automation identify";
-            // 
-            // btnInsertPatient
-            // 
-            this.btnInsertPatient.Location = new System.Drawing.Point(245, 133);
-            this.btnInsertPatient.Name = "btnInsertPatient";
-            this.btnInsertPatient.Size = new System.Drawing.Size(75, 23);
-            this.btnInsertPatient.TabIndex = 3;
-            this.btnInsertPatient.Text = "Insert";
-            this.btnInsertPatient.UseVisualStyleBackColor = true;
-            this.btnInsertPatient.Click += new System.EventHandler(this.btnInsertPatient_Click);
-            // 
-            // btnClearPatient
-            // 
-            this.btnClearPatient.Location = new System.Drawing.Point(326, 133);
-            this.btnClearPatient.Name = "btnClearPatient";
-            this.btnClearPatient.Size = new System.Drawing.Size(75, 23);
-            this.btnClearPatient.TabIndex = 4;
-            this.btnClearPatient.Text = "Clear";
-            this.btnClearPatient.UseVisualStyleBackColor = true;
-            this.btnClearPatient.Click += new System.EventHandler(this.btnClearPatient_Click);
-            // 
             // center_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,6 +765,10 @@
             this.tabControlMain.ResumeLayout(false);
             this.tpPatient.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -788,10 +793,6 @@
             this.tpTechnical.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -808,7 +809,7 @@
         private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxSearchPatient;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel2;

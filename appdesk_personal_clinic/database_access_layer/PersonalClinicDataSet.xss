@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="298" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:DOCTOR" ZOrder="2" X="636" Y="63" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:PATIENT" ZOrder="1" X="298" Y="54" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:PATIENT" ZOrder="1" X="298" Y="54" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:SPECIALIST" ZOrder="13" X="984" Y="82" Height="134" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:BILL" ZOrder="15" X="347" Y="331" Height="191" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:DETAIL_PRESCRIPTION" ZOrder="8" X="653" Y="784" Height="191" Width="278" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
@@ -165,7 +165,7 @@
       <RoutePoints>
         <Point>
           <X>483</X>
-          <Y>264</Y>
+          <Y>283</Y>
         </Point>
         <Point>
           <X>483</X>
@@ -193,7 +193,7 @@
       <RoutePoints>
         <Point>
           <X>570</X>
-          <Y>264</Y>
+          <Y>283</Y>
         </Point>
         <Point>
           <X>570</X>

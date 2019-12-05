@@ -121,6 +121,7 @@ namespace presentation_layer
         private void btnRefeshGridPatient_Click(object sender, EventArgs e)
         {
             getDataPatientGrid();
+            tbxSearchPatient.Text = "";
         }
 
         private void btnClearPatient_Click(object sender, EventArgs e)
@@ -144,10 +145,15 @@ namespace presentation_layer
             clearDataFieldPatient();
             return;
         }
+
         #endregion Patient
 
         #endregion Events
 
-
+        private void tbxSearchPatient_TextChanged(object sender, EventArgs e)
+        {
+            PersonalClinicDataSet.PATIENTDataTable tablePatientSearch = patientBUS.getDataTarget(tbxSearchPatient.Text);
+            dgvPatient.DataSource = tablePatientSearch;
+        }
     }
 }
