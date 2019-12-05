@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblPatient;
         }
 
+        public PersonalClinicDataSet.PATIENTDataTable getCoreDataTarget(string contentSearch)
+        {
+            PersonalClinicDataSet.PATIENTDataTable tblPatient = new PATIENTTableAdapter().GetDataByContentSearch(contentSearch);
+            return tblPatient;
+        }
+
         public int updateCorePatient(PatientDTO originalPatient)
         {
 

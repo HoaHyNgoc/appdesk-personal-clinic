@@ -17,8 +17,14 @@ namespace business_logic_layer
 
         public PersonalClinicDataSet.PATIENTDataTable getData()
         {
-            PersonalClinicDataSet.PATIENTDataTable _tblDoctor = patientDal.getData();
-            return _tblDoctor;
+            PersonalClinicDataSet.PATIENTDataTable _tblPatient = patientDal.getData();
+            return _tblPatient;
+        }
+
+        public PersonalClinicDataSet.PATIENTDataTable getDataTarget(string contentSearch)
+        {
+            PersonalClinicDataSet.PATIENTDataTable _tblPatient = patientDal.getCoreDataTarget(contentSearch);
+            return _tblPatient;
         }
 
         public int updatePatient(
