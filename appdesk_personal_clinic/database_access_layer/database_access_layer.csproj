@@ -44,6 +44,7 @@
     <Compile Include="dbConnection.cs" />
     <Compile Include="DoctorDAL.cs" />
     <Compile Include="MedicineDAL.cs" />
+    <Compile Include="PatientDAL.cs" />
     <Compile Include="PersonalClinicDataSet.cs">
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
     </Compile>
