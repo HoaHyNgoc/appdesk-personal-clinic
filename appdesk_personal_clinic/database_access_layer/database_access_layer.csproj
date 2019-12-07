@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="dbConnection.cs" />
     <Compile Include="DoctorDAL.cs" />
+    <Compile Include="MedicalRecordDAL.cs" />
     <Compile Include="MedicineDAL.cs" />
     <Compile Include="PatientDAL.cs" />
     <Compile Include="PersonalClinicDataSet.cs">
