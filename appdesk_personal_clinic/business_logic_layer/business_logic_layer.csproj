@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoctorBUS.cs" />
+    <Compile Include="MedicalRecordBUS.cs" />
     <Compile Include="MedicineBUS.cs" />
     <Compile Include="PatientBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

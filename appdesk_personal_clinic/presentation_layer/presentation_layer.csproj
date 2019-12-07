@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="screen_debug_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen_debug_data.Designer.cs">
+      <DependentUpon>screen_debug_data.cs</DependentUpon>
+    </Compile>
     <Compile Include="search_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="screen_debug_data.resx">
+      <DependentUpon>screen_debug_data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="search_screen.resx">
       <DependentUpon>search_screen.cs</DependentUpon>
     </EmbeddedResource>

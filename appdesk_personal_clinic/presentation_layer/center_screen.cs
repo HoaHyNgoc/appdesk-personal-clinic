@@ -20,6 +20,7 @@ namespace presentation_layer
     {
         #region Import global object business
 
+        DoctorBUS doctorBUS = new DoctorBUS();
         PatientBUS patientBUS = new PatientBUS();
 
         #endregion Import global object business
@@ -37,17 +38,39 @@ namespace presentation_layer
 
         #region Methods
 
-        #region CRUD
+        #region Global methods
 
-        #region Patient
+        public void loadSingletonDataObject()
+        {
+            getDataDoctorGird();
+            getDataPatientGrid();
+        }
+
+        #endregion Global methods
+
+        #region Read data - objects
+
         public void getDataPatientGrid()
         {
             PersonalClinicDataSet.PATIENTDataTable tablePatient = patientBUS.getData();
             dgvPatient.DataSource = tablePatient;
-        }
-        #endregion Patient
 
-        #endregion CRUD
+            // Fill data patient - combobox medical record
+            cbxMedicalRecordPatient.DataSource = tablePatient;
+            cbxMedicalRecordPatient.ValueMember = "idPatient";
+            cbxMedicalRecordPatient.DisplayMember = "fullName";
+        }
+
+        public void getDataDoctorGird()
+        {
+            PersonalClinicDataSet.DOCTORDataTable tableDoctor = doctorBUS.getData();
+
+            // Fill data doctor - combobox medical record
+            cbxMedicalRecordDoctor.DataSource = tableDoctor;
+            cbxMedicalRecordDoctor.ValueMember = "idDoctor";
+            cbxMedicalRecordDoctor.DisplayMember = "fullName";
+        }
+        #endregion Read data - objects
 
         #region Patient
         public bool fillCurrentRowDataPatientToControl()
@@ -100,11 +123,12 @@ namespace presentation_layer
 
         #region Events
 
-        #region Patient
         private void center_screen_Load(object sender, EventArgs e)
         {
-            getDataPatientGrid();
+            loadSingletonDataObject();
         }
+
+        #region Patient
 
         private void dgvPatient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -148,6 +172,30 @@ namespace presentation_layer
 
         #endregion Patient
 
+        #region Medical process
+
+        private void ptPatient_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpPatient;
+        }
+
+        private void ptMedicalRecord_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpMedicalRecord;
+        }
+
+        private void ptTechnique_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpTechnical;
+        }
+
+        private void ptPrescription_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpPrescription;
+        }
+
+        #endregion Medical process
+
         #endregion Events
 
         private void tbxSearchPatient_TextChanged(object sender, EventArgs e)
@@ -155,5 +203,7 @@ namespace presentation_layer
             PersonalClinicDataSet.PATIENTDataTable tablePatientSearch = patientBUS.getDataTarget(tbxSearchPatient.Text);
             dgvPatient.DataSource = tablePatientSearch;
         }
+
+
     }
 }
