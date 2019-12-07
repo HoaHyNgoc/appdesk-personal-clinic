@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillDAL.cs" />
     <Compile Include="dbConnection.cs" />
+    <Compile Include="DetailPrescriptionDAL.cs" />
+    <Compile Include="DetailTechniqueDAL.cs" />
+    <Compile Include="DiagnosticDAL.cs" />
     <Compile Include="DoctorDAL.cs" />
     <Compile Include="MedicalRecordDAL.cs" />
     <Compile Include="MedicineDAL.cs" />
@@ -54,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PrescriptionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -61,6 +66,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SpecialistDAL.cs" />
+    <Compile Include="TechniqueDAL.cs" />
     <Compile Include="UnitMedicineDAL.cs" />
   </ItemGroup>
   <ItemGroup>

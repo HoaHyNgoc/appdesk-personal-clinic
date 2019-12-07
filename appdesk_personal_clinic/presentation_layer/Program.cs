@@ -16,7 +16,7 @@ namespace presentation_layer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new screen_debug_data());
+            Application.Run(new center_screen());
         }
     }
 }
