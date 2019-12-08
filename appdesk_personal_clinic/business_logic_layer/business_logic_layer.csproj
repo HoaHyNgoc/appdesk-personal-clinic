@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailPrescriptionBUS.cs" />
+    <Compile Include="DetailTechniqueBUS.cs" />
+    <Compile Include="DiagnosticBUS.cs" />
     <Compile Include="DoctorBUS.cs" />
     <Compile Include="MedicalRecordBUS.cs" />
     <Compile Include="MedicineBUS.cs" />
     <Compile Include="PatientBUS.cs" />
+    <Compile Include="PrescriptionBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechniqueBUS.cs" />
     <Compile Include="UnitMedicineBUS.cs" />
   </ItemGroup>
   <ItemGroup>
