@@ -64,6 +64,12 @@
     <Compile Include="admin_root_ui\screen_admin.Designer.cs">
       <DependentUpon>screen_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="center_custom_ui\medical_ui\update_medical_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="center_custom_ui\medical_ui\update_medical_screen.Designer.cs">
+      <DependentUpon>update_medical_screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="center_custom_ui\patient_ui\update_patient_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_root_ui\screen_admin.resx">
       <DependentUpon>screen_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="center_custom_ui\medical_ui\update_medical_screen.resx">
+      <DependentUpon>update_medical_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="center_custom_ui\patient_ui\update_patient_screen.resx">
       <DependentUpon>update_patient_screen.cs</DependentUpon>
