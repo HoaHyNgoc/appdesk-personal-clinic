@@ -8,7 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+#region Import Screen
+
 using presentation_layer.center_custom_ui.patient_ui;
+using presentation_layer.center_custom_ui.medical_ui;
+
+#endregion Import Screen
 
 using business_logic_layer;
 using database_access_layer;
@@ -18,15 +23,23 @@ namespace presentation_layer
 {
     public partial class center_screen : Form
     {
+        #region Global Variables
+
+        List<Control> listMedicalProcess = new List<Control>();
+        
+        #endregion Global Variables
+
         #region Import global object business
 
         DoctorBUS doctorBUS = new DoctorBUS();
+        MedicalRecordBUS medicalRecordBUS = new MedicalRecordBUS();
         PatientBUS patientBUS = new PatientBUS();
 
         #endregion Import global object business
 
         #region Import state data object transfer
 
+        MedicalRecordDTO medicalRecordDTO = new MedicalRecordDTO();
         PatientDTO patientDTO = new PatientDTO();
 
         #endregion Import state data object transfer
@@ -34,6 +47,7 @@ namespace presentation_layer
         public center_screen()
         {
             InitializeComponent();
+            initSwitchMenuOption();
         }
 
         #region Methods
@@ -44,6 +58,14 @@ namespace presentation_layer
         {
             getDataDoctorGird();
             getDataPatientGrid();
+        }
+
+        public void initSwitchMenuOption()
+        {         
+            listMedicalProcess.Add(lbStateMedicalProcess01);
+            listMedicalProcess.Add(lbStateMedicalProcess02);
+            listMedicalProcess.Add(lbStateMedicalProcess03);
+            listMedicalProcess.Add(lbStateMedicalProcess04);
         }
 
         #endregion Global methods
@@ -70,9 +92,17 @@ namespace presentation_layer
             cbxMedicalRecordDoctor.ValueMember = "idDoctor";
             cbxMedicalRecordDoctor.DisplayMember = "fullName";
         }
+
+        public void getDataMedicalGrid()
+        {
+            PersonalClinicDataSet.MEDICAL_RECORDDataTable tableMedicalRecord = medicalRecordBUS.getDataTarget("");
+            dgvMedicalRecord.DataSource = tableMedicalRecord;
+        }
+
         #endregion Read data - objects
 
         #region Patient
+
         public bool fillCurrentRowDataPatientToControl()
         {
             lbidPatient.Text = Convert.ToString(dgvPatient.CurrentRow.Cells["idPatient"].Value);
@@ -116,7 +146,28 @@ namespace presentation_layer
             }
             return true;
         }
+
         #endregion Patient
+
+        #region Medical record
+
+        public MedicalRecordDTO selectCurrentRowDataMedicalToControl()
+        {
+            medicalRecordDTO.IdPatient = Convert.ToInt32(dgvMedicalRecord.CurrentRow.Cells["idPatient"].Value);
+            medicalRecordDTO.IdDoctor = Convert.ToInt32(dgvMedicalRecord.CurrentRow.Cells["idDoctor"].Value);
+            medicalRecordDTO.History = Convert.ToString(dgvMedicalRecord.CurrentRow.Cells["history"].Value);
+            medicalRecordDTO.DateInitMedical = Convert.ToString(dgvMedicalRecord.CurrentRow.Cells["dateInitMedical"].Value);
+            medicalRecordDTO.Request = Convert.ToString(dgvMedicalRecord.CurrentRow.Cells["request"].Value);
+            medicalRecordDTO.IdMedicalRecord = Convert.ToInt32(dgvMedicalRecord.CurrentRow.Cells["idMedicalRecord"].Value);
+            return medicalRecordDTO;
+        }
+
+        public void clearDataFieldMedicalRecord()
+        {
+            tbxHistoryMedicalRecord.Text = "";
+        }
+
+        #endregion Medical record
 
         #endregion Methods
 
@@ -170,40 +221,101 @@ namespace presentation_layer
             return;
         }
 
-        #endregion Patient
-
-        #region Medical process
-
-        private void ptPatient_Click(object sender, EventArgs e)
-        {
-            tabControlMain.SelectedTab = tpPatient;
-        }
-
-        private void ptMedicalRecord_Click(object sender, EventArgs e)
-        {
-            tabControlMain.SelectedTab = tpMedicalRecord;
-        }
-
-        private void ptTechnique_Click(object sender, EventArgs e)
-        {
-            tabControlMain.SelectedTab = tpTechnical;
-        }
-
-        private void ptPrescription_Click(object sender, EventArgs e)
-        {
-            tabControlMain.SelectedTab = tpPrescription;
-        }
-
-        #endregion Medical process
-
-        #endregion Events
-
         private void tbxSearchPatient_TextChanged(object sender, EventArgs e)
         {
             PersonalClinicDataSet.PATIENTDataTable tablePatientSearch = patientBUS.getDataTarget(tbxSearchPatient.Text);
             dgvPatient.DataSource = tablePatientSearch;
         }
 
+        #endregion Patient
 
+        #region Medical record
+
+        private void btnClearMedicalRecord_Click(object sender, EventArgs e)
+        {
+            clearDataFieldMedicalRecord();
+        }
+
+        private void btnInsertMedicalRecord_Click(object sender, EventArgs e)
+        {
+            medicalRecordBUS.insertMedicalRecord(
+                cbxMedicalRecordPatient.SelectedValue.ToString(),
+                cbxMedicalRecordDoctor.SelectedValue.ToString(),
+                tbxHistoryMedicalRecord.Text,
+                dtpMedicalRecord.Value.ToString(),
+                cbxMedicalRecordRequest.Text
+                );
+            MessageBox.Show("Data medical record inserted...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            clearDataFieldMedicalRecord();
+            return;
+        }
+
+        private void tbxSearchMedicalRecord_TextChanged(object sender, EventArgs e)
+        {
+            PersonalClinicDataSet.MEDICAL_RECORDDataTable tableMedicalRecordSearch = medicalRecordBUS.getDataTarget(tbxSearchMedicalRecord.Text);
+            if(tbxSearchMedicalRecord == null)
+            {
+                MessageBox.Show("Search information is null ...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            dgvMedicalRecord.DataSource = tableMedicalRecordSearch;
+            return;
+        }
+
+        private void dgvMedicalRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectCurrentRowDataMedicalToControl();
+            Form frmUpdateMedicalRecord = new update_medical_screen(medicalRecordDTO);
+            frmUpdateMedicalRecord.Show();
+        }
+
+        private void btnRefeshMedicalGrid_Click(object sender, EventArgs e)
+        {
+            tbxSearchMedicalRecord.Text = "";
+            getDataMedicalGrid();
+        }
+
+        #endregion Medical record
+
+        #region Medical process
+
+        public void setStateMedicalProcess(string labelStateMedicalProcess)
+        {
+            foreach (Control item in listMedicalProcess)
+            {
+                if (item.Name == labelStateMedicalProcess)
+                    item.ForeColor = Color.BlueViolet;
+                else
+                    item.ForeColor = Color.Black;
+            }
+        }
+
+        private void ptPatient_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpPatient;
+            setStateMedicalProcess(lbStateMedicalProcess01.Name);
+        }
+
+        private void ptMedicalRecord_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpMedicalRecord;
+            setStateMedicalProcess(lbStateMedicalProcess02.Name);
+        }
+
+        private void ptTechnique_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpTechnical;
+            setStateMedicalProcess(lbStateMedicalProcess03.Name);
+        }
+
+        private void ptPrescription_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpPrescription;
+            setStateMedicalProcess(lbStateMedicalProcess04.Name);
+        }
+
+        #endregion Medical process
+
+        #endregion Events
     }
 }

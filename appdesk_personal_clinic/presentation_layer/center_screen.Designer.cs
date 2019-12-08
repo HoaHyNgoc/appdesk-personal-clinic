@@ -68,19 +68,28 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.tbxSearchPatient = new System.Windows.Forms.TextBox();
             this.tpMedicalRecord = new System.Windows.Forms.TabPage();
+            this.btnClearMedicalRecord = new System.Windows.Forms.Button();
+            this.btnInsertMedicalRecord = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvMedicalRecord = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefeshMedicalGrid = new System.Windows.Forms.Button();
+            this.tbxSearchMedicalRecord = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.tbxHistoryMedicalRecord = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.cbxMedicalRecordRequest = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.cbxMedicalRecordPatient = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dtpMedicalRecord = new System.Windows.Forms.DateTimePicker();
+            this.cbxMedicalRecordDoctor = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tpTechnical = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -89,28 +98,19 @@
             this.tpPrescription = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ptMedicalRecord = new System.Windows.Forms.PictureBox();
-            this.ptTechnique = new System.Windows.Forms.PictureBox();
-            this.ptPrescription = new System.Windows.Forms.PictureBox();
+            this.lbStateMedicalProcess04 = new System.Windows.Forms.Label();
+            this.lbStateMedicalProcess03 = new System.Windows.Forms.Label();
+            this.lbStateMedicalProcess02 = new System.Windows.Forms.Label();
+            this.lbStateMedicalProcess01 = new System.Windows.Forms.Label();
             this.ptPatient = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ptPrescription = new System.Windows.Forms.PictureBox();
+            this.ptTechnique = new System.Windows.Forms.PictureBox();
+            this.ptMedicalRecord = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.cbxMedicalRecordDoctor = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbxMedicalRecordRequest = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.cbxMedicalRecordPatient = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,24 +124,24 @@
             this.panel1.SuspendLayout();
             this.tpMedicalRecord.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicalRecord)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tpTechnical.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptPatient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel10.SuspendLayout();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -521,8 +521,8 @@
             // 
             // tpMedicalRecord
             // 
-            this.tpMedicalRecord.Controls.Add(this.button3);
-            this.tpMedicalRecord.Controls.Add(this.button2);
+            this.tpMedicalRecord.Controls.Add(this.btnClearMedicalRecord);
+            this.tpMedicalRecord.Controls.Add(this.btnInsertMedicalRecord);
             this.tpMedicalRecord.Controls.Add(this.groupBox4);
             this.tpMedicalRecord.Controls.Add(this.groupBox3);
             this.tpMedicalRecord.Location = new System.Drawing.Point(4, 22);
@@ -533,9 +533,29 @@
             this.tpMedicalRecord.Text = "Medical record";
             this.tpMedicalRecord.UseVisualStyleBackColor = true;
             // 
+            // btnClearMedicalRecord
+            // 
+            this.btnClearMedicalRecord.Location = new System.Drawing.Point(655, 328);
+            this.btnClearMedicalRecord.Name = "btnClearMedicalRecord";
+            this.btnClearMedicalRecord.Size = new System.Drawing.Size(75, 23);
+            this.btnClearMedicalRecord.TabIndex = 4;
+            this.btnClearMedicalRecord.Text = "Clear";
+            this.btnClearMedicalRecord.UseVisualStyleBackColor = true;
+            this.btnClearMedicalRecord.Click += new System.EventHandler(this.btnClearMedicalRecord_Click);
+            // 
+            // btnInsertMedicalRecord
+            // 
+            this.btnInsertMedicalRecord.Location = new System.Drawing.Point(574, 328);
+            this.btnInsertMedicalRecord.Name = "btnInsertMedicalRecord";
+            this.btnInsertMedicalRecord.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertMedicalRecord.TabIndex = 3;
+            this.btnInsertMedicalRecord.Text = "Insert";
+            this.btnInsertMedicalRecord.UseVisualStyleBackColor = true;
+            this.btnInsertMedicalRecord.Click += new System.EventHandler(this.btnInsertMedicalRecord_Click);
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.Controls.Add(this.dgvMedicalRecord);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.panel2);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
@@ -545,39 +565,55 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Data view";
             // 
-            // dataGridView1
+            // dgvMedicalRecord
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(747, 63);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvMedicalRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicalRecord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMedicalRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicalRecord.Location = new System.Drawing.Point(3, 69);
+            this.dgvMedicalRecord.Name = "dgvMedicalRecord";
+            this.dgvMedicalRecord.Size = new System.Drawing.Size(747, 63);
+            this.dgvMedicalRecord.TabIndex = 1;
+            this.dgvMedicalRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicalRecord_CellDoubleClick);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label22.Location = new System.Drawing.Point(495, 50);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(255, 13);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Double click on any data cell to update information...";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.btnRefeshMedicalGrid);
+            this.panel2.Controls.Add(this.tbxSearchMedicalRecord);
             this.panel2.Location = new System.Drawing.Point(6, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 44);
             this.panel2.TabIndex = 0;
             // 
-            // button1
+            // btnRefeshMedicalGrid
             // 
-            this.button1.Location = new System.Drawing.Point(216, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRefeshMedicalGrid.Location = new System.Drawing.Point(294, 10);
+            this.btnRefeshMedicalGrid.Name = "btnRefeshMedicalGrid";
+            this.btnRefeshMedicalGrid.Size = new System.Drawing.Size(75, 23);
+            this.btnRefeshMedicalGrid.TabIndex = 2;
+            this.btnRefeshMedicalGrid.Text = "Refesh";
+            this.btnRefeshMedicalGrid.UseVisualStyleBackColor = true;
+            this.btnRefeshMedicalGrid.Click += new System.EventHandler(this.btnRefeshMedicalGrid_Click);
             // 
-            // textBox2
+            // tbxSearchMedicalRecord
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 20);
-            this.textBox2.TabIndex = 0;
+            this.tbxSearchMedicalRecord.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tbxSearchMedicalRecord.Location = new System.Drawing.Point(81, 12);
+            this.tbxSearchMedicalRecord.Name = "tbxSearchMedicalRecord";
+            this.tbxSearchMedicalRecord.Size = new System.Drawing.Size(207, 20);
+            this.tbxSearchMedicalRecord.TabIndex = 0;
+            this.tbxSearchMedicalRecord.TextChanged += new System.EventHandler(this.tbxSearchMedicalRecord_TextChanged);
             // 
             // groupBox3
             // 
@@ -591,27 +627,45 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detail medical record";
             // 
-            // label22
+            // panel7
             // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label22.Location = new System.Drawing.Point(573, 50);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(177, 13);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Double click to update information...";
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.tbxHistoryMedicalRecord);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.cbxMedicalRecordRequest);
+            this.panel7.Controls.Add(this.label16);
+            this.panel7.Location = new System.Drawing.Point(385, 53);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(340, 110);
+            this.panel7.TabIndex = 3;
             // 
-            // panel6
+            // tbxHistoryMedicalRecord
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.dateTimePicker1);
-            this.panel6.Controls.Add(this.cbxMedicalRecordDoctor);
-            this.panel6.Controls.Add(this.label14);
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Location = new System.Drawing.Point(39, 53);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(340, 110);
-            this.panel6.TabIndex = 0;
+            this.tbxHistoryMedicalRecord.Location = new System.Drawing.Point(84, 32);
+            this.tbxHistoryMedicalRecord.Name = "tbxHistoryMedicalRecord";
+            this.tbxHistoryMedicalRecord.Size = new System.Drawing.Size(244, 20);
+            this.tbxHistoryMedicalRecord.TabIndex = 10;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 16);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Request:";
+            // 
+            // cbxMedicalRecordRequest
+            // 
+            this.cbxMedicalRecordRequest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedicalRecordRequest.FormattingEnabled = true;
+            this.cbxMedicalRecordRequest.Items.AddRange(new object[] {
+            "Service",
+            "Insurrance"});
+            this.cbxMedicalRecordRequest.Location = new System.Drawing.Point(84, 8);
+            this.cbxMedicalRecordRequest.Name = "cbxMedicalRecordRequest";
+            this.cbxMedicalRecordRequest.Size = new System.Drawing.Size(157, 21);
+            this.cbxMedicalRecordRequest.TabIndex = 9;
             // 
             // label16
             // 
@@ -622,14 +676,61 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "History:";
             // 
-            // label15
+            // panel10
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 16);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Request:";
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.cbxMedicalRecordPatient);
+            this.panel10.Controls.Add(this.label12);
+            this.panel10.Location = new System.Drawing.Point(211, 13);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(357, 34);
+            this.panel10.TabIndex = 2;
+            // 
+            // cbxMedicalRecordPatient
+            // 
+            this.cbxMedicalRecordPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedicalRecordPatient.FormattingEnabled = true;
+            this.cbxMedicalRecordPatient.Location = new System.Drawing.Point(94, 5);
+            this.cbxMedicalRecordPatient.Name = "cbxMedicalRecordPatient";
+            this.cbxMedicalRecordPatient.Size = new System.Drawing.Size(184, 21);
+            this.cbxMedicalRecordPatient.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(34, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Id patient:";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.dtpMedicalRecord);
+            this.panel6.Controls.Add(this.cbxMedicalRecordDoctor);
+            this.panel6.Controls.Add(this.label14);
+            this.panel6.Controls.Add(this.label13);
+            this.panel6.Location = new System.Drawing.Point(39, 53);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(340, 110);
+            this.panel6.TabIndex = 0;
+            // 
+            // dtpMedicalRecord
+            // 
+            this.dtpMedicalRecord.Location = new System.Drawing.Point(78, 32);
+            this.dtpMedicalRecord.Name = "dtpMedicalRecord";
+            this.dtpMedicalRecord.Size = new System.Drawing.Size(200, 20);
+            this.dtpMedicalRecord.TabIndex = 8;
+            // 
+            // cbxMedicalRecordDoctor
+            // 
+            this.cbxMedicalRecordDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedicalRecordDoctor.FormattingEnabled = true;
+            this.cbxMedicalRecordDoctor.Location = new System.Drawing.Point(78, 7);
+            this.cbxMedicalRecordDoctor.Name = "cbxMedicalRecordDoctor";
+            this.cbxMedicalRecordDoctor.Size = new System.Drawing.Size(157, 21);
+            this.cbxMedicalRecordDoctor.TabIndex = 7;
             // 
             // label14
             // 
@@ -648,15 +749,6 @@
             this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 3;
             this.label13.Text = "Id doctor:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Id patient:";
             // 
             // tpTechnical
             // 
@@ -712,7 +804,7 @@
             this.tpPrescription.Location = new System.Drawing.Point(4, 22);
             this.tpPrescription.Name = "tpPrescription";
             this.tpPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrescription.Size = new System.Drawing.Size(764, 304);
+            this.tpPrescription.Size = new System.Drawing.Size(764, 354);
             this.tpPrescription.TabIndex = 3;
             this.tpPrescription.Text = "Prescription";
             this.tpPrescription.UseVisualStyleBackColor = true;
@@ -730,10 +822,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.lbStateMedicalProcess04);
+            this.tabPage1.Controls.Add(this.lbStateMedicalProcess03);
+            this.tabPage1.Controls.Add(this.lbStateMedicalProcess02);
+            this.tabPage1.Controls.Add(this.lbStateMedicalProcess01);
             this.tabPage1.Controls.Add(this.ptPatient);
             this.tabPage1.Controls.Add(this.ptPrescription);
             this.tabPage1.Controls.Add(this.ptTechnique);
@@ -745,6 +837,86 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Medical process";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lbStateMedicalProcess04
+            // 
+            this.lbStateMedicalProcess04.AutoSize = true;
+            this.lbStateMedicalProcess04.Location = new System.Drawing.Point(278, 57);
+            this.lbStateMedicalProcess04.Name = "lbStateMedicalProcess04";
+            this.lbStateMedicalProcess04.Size = new System.Drawing.Size(62, 13);
+            this.lbStateMedicalProcess04.TabIndex = 6;
+            this.lbStateMedicalProcess04.Text = "Prescription";
+            // 
+            // lbStateMedicalProcess03
+            // 
+            this.lbStateMedicalProcess03.AutoSize = true;
+            this.lbStateMedicalProcess03.Location = new System.Drawing.Point(188, 57);
+            this.lbStateMedicalProcess03.Name = "lbStateMedicalProcess03";
+            this.lbStateMedicalProcess03.Size = new System.Drawing.Size(58, 13);
+            this.lbStateMedicalProcess03.TabIndex = 5;
+            this.lbStateMedicalProcess03.Text = "Technique";
+            // 
+            // lbStateMedicalProcess02
+            // 
+            this.lbStateMedicalProcess02.AutoSize = true;
+            this.lbStateMedicalProcess02.Location = new System.Drawing.Point(94, 57);
+            this.lbStateMedicalProcess02.Name = "lbStateMedicalProcess02";
+            this.lbStateMedicalProcess02.Size = new System.Drawing.Size(77, 13);
+            this.lbStateMedicalProcess02.TabIndex = 4;
+            this.lbStateMedicalProcess02.Text = "Medical record";
+            // 
+            // lbStateMedicalProcess01
+            // 
+            this.lbStateMedicalProcess01.AutoSize = true;
+            this.lbStateMedicalProcess01.Location = new System.Drawing.Point(13, 57);
+            this.lbStateMedicalProcess01.Name = "lbStateMedicalProcess01";
+            this.lbStateMedicalProcess01.Size = new System.Drawing.Size(63, 13);
+            this.lbStateMedicalProcess01.TabIndex = 2;
+            this.lbStateMedicalProcess01.Text = "Patient infor";
+            // 
+            // ptPatient
+            // 
+            this.ptPatient.Image = ((System.Drawing.Image)(resources.GetObject("ptPatient.Image")));
+            this.ptPatient.Location = new System.Drawing.Point(29, 15);
+            this.ptPatient.Name = "ptPatient";
+            this.ptPatient.Size = new System.Drawing.Size(32, 32);
+            this.ptPatient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptPatient.TabIndex = 3;
+            this.ptPatient.TabStop = false;
+            this.ptPatient.Click += new System.EventHandler(this.ptPatient_Click);
+            // 
+            // ptPrescription
+            // 
+            this.ptPrescription.Image = ((System.Drawing.Image)(resources.GetObject("ptPrescription.Image")));
+            this.ptPrescription.Location = new System.Drawing.Point(292, 15);
+            this.ptPrescription.Name = "ptPrescription";
+            this.ptPrescription.Size = new System.Drawing.Size(32, 32);
+            this.ptPrescription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptPrescription.TabIndex = 2;
+            this.ptPrescription.TabStop = false;
+            this.ptPrescription.Click += new System.EventHandler(this.ptPrescription_Click);
+            // 
+            // ptTechnique
+            // 
+            this.ptTechnique.Image = ((System.Drawing.Image)(resources.GetObject("ptTechnique.Image")));
+            this.ptTechnique.Location = new System.Drawing.Point(200, 15);
+            this.ptTechnique.Name = "ptTechnique";
+            this.ptTechnique.Size = new System.Drawing.Size(32, 32);
+            this.ptTechnique.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptTechnique.TabIndex = 1;
+            this.ptTechnique.TabStop = false;
+            this.ptTechnique.Click += new System.EventHandler(this.ptTechnique_Click);
+            // 
+            // ptMedicalRecord
+            // 
+            this.ptMedicalRecord.Image = ((System.Drawing.Image)(resources.GetObject("ptMedicalRecord.Image")));
+            this.ptMedicalRecord.Location = new System.Drawing.Point(115, 15);
+            this.ptMedicalRecord.Name = "ptMedicalRecord";
+            this.ptMedicalRecord.Size = new System.Drawing.Size(32, 32);
+            this.ptMedicalRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptMedicalRecord.TabIndex = 0;
+            this.ptMedicalRecord.TabStop = false;
+            this.ptMedicalRecord.Click += new System.EventHandler(this.ptMedicalRecord_Click);
             // 
             // tabPage2
             // 
@@ -758,59 +930,15 @@
             this.tabPage2.Text = "Payment costs";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ptMedicalRecord
+            // pictureBox6
             // 
-            this.ptMedicalRecord.Image = ((System.Drawing.Image)(resources.GetObject("ptMedicalRecord.Image")));
-            this.ptMedicalRecord.Location = new System.Drawing.Point(115, 15);
-            this.ptMedicalRecord.Name = "ptMedicalRecord";
-            this.ptMedicalRecord.Size = new System.Drawing.Size(32, 32);
-            this.ptMedicalRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptMedicalRecord.TabIndex = 0;
-            this.ptMedicalRecord.TabStop = false;
-            this.ptMedicalRecord.Click += new System.EventHandler(this.ptMedicalRecord_Click);
-            // 
-            // ptTechnique
-            // 
-            this.ptTechnique.Image = ((System.Drawing.Image)(resources.GetObject("ptTechnique.Image")));
-            this.ptTechnique.Location = new System.Drawing.Point(200, 15);
-            this.ptTechnique.Name = "ptTechnique";
-            this.ptTechnique.Size = new System.Drawing.Size(32, 32);
-            this.ptTechnique.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptTechnique.TabIndex = 1;
-            this.ptTechnique.TabStop = false;
-            this.ptTechnique.Click += new System.EventHandler(this.ptTechnique_Click);
-            // 
-            // ptPrescription
-            // 
-            this.ptPrescription.Image = ((System.Drawing.Image)(resources.GetObject("ptPrescription.Image")));
-            this.ptPrescription.Location = new System.Drawing.Point(292, 15);
-            this.ptPrescription.Name = "ptPrescription";
-            this.ptPrescription.Size = new System.Drawing.Size(32, 32);
-            this.ptPrescription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptPrescription.TabIndex = 2;
-            this.ptPrescription.TabStop = false;
-            this.ptPrescription.Click += new System.EventHandler(this.ptPrescription_Click);
-            // 
-            // ptPatient
-            // 
-            this.ptPatient.Image = ((System.Drawing.Image)(resources.GetObject("ptPatient.Image")));
-            this.ptPatient.Location = new System.Drawing.Point(29, 15);
-            this.ptPatient.Name = "ptPatient";
-            this.ptPatient.Size = new System.Drawing.Size(32, 32);
-            this.ptPatient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptPatient.TabIndex = 3;
-            this.ptPatient.TabStop = false;
-            this.ptPatient.Click += new System.EventHandler(this.ptPatient_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(764, 76);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Report documents";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(90, 21);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -822,144 +950,25 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox6
+            // tabPage3
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(90, 21);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(764, 76);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Report documents";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label24
+            // label17
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(13, 57);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(63, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Patient infor";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(94, 57);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(77, 13);
-            this.label25.TabIndex = 4;
-            this.label25.Text = "Medical record";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(188, 57);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(58, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Technique";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(278, 57);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 13);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "Prescription";
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.cbxMedicalRecordPatient);
-            this.panel10.Controls.Add(this.label12);
-            this.panel10.Location = new System.Drawing.Point(211, 13);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(357, 34);
-            this.panel10.TabIndex = 2;
-            // 
-            // cbxMedicalRecordDoctor
-            // 
-            this.cbxMedicalRecordDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMedicalRecordDoctor.FormattingEnabled = true;
-            this.cbxMedicalRecordDoctor.Location = new System.Drawing.Point(78, 7);
-            this.cbxMedicalRecordDoctor.Name = "cbxMedicalRecordDoctor";
-            this.cbxMedicalRecordDoctor.Size = new System.Drawing.Size(157, 21);
-            this.cbxMedicalRecordDoctor.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // cbxMedicalRecordRequest
-            // 
-            this.cbxMedicalRecordRequest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMedicalRecordRequest.FormattingEnabled = true;
-            this.cbxMedicalRecordRequest.Items.AddRange(new object[] {
-            "Doctor",
-            "Patient"});
-            this.cbxMedicalRecordRequest.Location = new System.Drawing.Point(84, 8);
-            this.cbxMedicalRecordRequest.Name = "cbxMedicalRecordRequest";
-            this.cbxMedicalRecordRequest.Size = new System.Drawing.Size(157, 21);
-            this.cbxMedicalRecordRequest.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(84, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.cbxMedicalRecordRequest);
-            this.panel7.Controls.Add(this.label16);
-            this.panel7.Location = new System.Drawing.Point(385, 53);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(340, 110);
-            this.panel7.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(574, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Insert";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(655, 328);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // cbxMedicalRecordPatient
-            // 
-            this.cbxMedicalRecordPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMedicalRecordPatient.FormattingEnabled = true;
-            this.cbxMedicalRecordPatient.Location = new System.Drawing.Point(94, 5);
-            this.cbxMedicalRecordPatient.Name = "cbxMedicalRecordPatient";
-            this.cbxMedicalRecordPatient.Size = new System.Drawing.Size(184, 21);
-            this.cbxMedicalRecordPatient.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(294, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Refesh";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label17.Location = new System.Drawing.Point(23, 15);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Search:";
             // 
             // center_screen
             // 
@@ -991,10 +1000,14 @@
             this.tpMedicalRecord.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicalRecord)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tpTechnical.ResumeLayout(false);
@@ -1003,17 +1016,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptPatient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1034,8 +1043,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxSearchMedicalRecord;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -1058,7 +1066,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMedicalRecord;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -1088,19 +1096,20 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lbStateMedicalProcess01;
+        private System.Windows.Forms.Label lbStateMedicalProcess02;
+        private System.Windows.Forms.Label lbStateMedicalProcess03;
+        private System.Windows.Forms.Label lbStateMedicalProcess04;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.ComboBox cbxMedicalRecordDoctor;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpMedicalRecord;
         private System.Windows.Forms.ComboBox cbxMedicalRecordRequest;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxHistoryMedicalRecord;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClearMedicalRecord;
+        private System.Windows.Forms.Button btnInsertMedicalRecord;
         private System.Windows.Forms.ComboBox cbxMedicalRecordPatient;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRefeshMedicalGrid;
+        private System.Windows.Forms.Label label17;
     }
 }

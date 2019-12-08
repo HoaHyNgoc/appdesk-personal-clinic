@@ -23,8 +23,12 @@ namespace business_logic_layer
 
         public PersonalClinicDataSet.MEDICAL_RECORDDataTable getDataTarget(string contentSearch)
         {
-            PersonalClinicDataSet.MEDICAL_RECORDDataTable _tblMedicalRecord = medicalRecordDAL.getCoreDataTarget(contentSearch);
-            return _tblMedicalRecord;
+            if(contentSearch != "")
+            {
+                PersonalClinicDataSet.MEDICAL_RECORDDataTable _tblMedicalRecord = medicalRecordDAL.getCoreDataTarget(contentSearch);
+                return _tblMedicalRecord;
+            }
+            return null;
         }
 
         public int updateMedicalRecord(
