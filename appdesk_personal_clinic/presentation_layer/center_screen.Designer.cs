@@ -74,6 +74,7 @@
             this.dgvMedicalRecord = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.btnRefeshMedicalGrid = new System.Windows.Forms.Button();
             this.tbxSearchMedicalRecord = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -110,7 +111,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -596,6 +596,16 @@
             this.panel2.Size = new System.Drawing.Size(372, 44);
             this.panel2.TabIndex = 0;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label17.Location = new System.Drawing.Point(23, 15);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Search:";
+            // 
             // btnRefeshMedicalGrid
             // 
             this.btnRefeshMedicalGrid.Location = new System.Drawing.Point(294, 10);
@@ -960,16 +970,6 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label17.Location = new System.Drawing.Point(23, 15);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 13);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Search:";
-            // 
             // center_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -978,7 +978,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tabControlMain);
             this.Name = "center_screen";
-            this.Text = "center_screen";
+            this.Text = "Personal Clinic";
             this.Load += new System.EventHandler(this.center_screen_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tpPatient.ResumeLayout(false);
