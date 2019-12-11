@@ -128,6 +128,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -860,6 +862,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.tbxidPatientTechnique);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.tbxPriceTechnique);
@@ -891,9 +895,9 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 75);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(446, 115);
+            this.dataGridView2.Size = new System.Drawing.Size(446, 90);
             this.dataGridView2.TabIndex = 0;
             // 
             // tpPrescription
@@ -1070,7 +1074,7 @@
             // 
             this.tbxidPatientTechnique.Location = new System.Drawing.Point(65, 20);
             this.tbxidPatientTechnique.Name = "tbxidPatientTechnique";
-            this.tbxidPatientTechnique.Size = new System.Drawing.Size(100, 20);
+            this.tbxidPatientTechnique.Size = new System.Drawing.Size(125, 20);
             this.tbxidPatientTechnique.TabIndex = 5;
             // 
             // dataGridView1
@@ -1150,6 +1154,23 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Get price";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 51);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Doctor:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(65, 43);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(125, 21);
+            this.comboBox1.TabIndex = 7;
             // 
             // center_screen
             // 
@@ -1318,5 +1339,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label25;
     }
 }
