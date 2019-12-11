@@ -25,6 +25,7 @@ namespace database_access_layer
             int flagUpdate = new TECHNIQUETableAdapter().updateTechniqueQuery(
                 originalTechnique.IdDoctor,
                 originalTechnique.Price,
+                originalTechnique.IdPatient,
                 originalTechnique.IdTechnique
                 );
 
@@ -35,7 +36,8 @@ namespace database_access_layer
         {
             int flagInsert = new TECHNIQUETableAdapter().insertTechniqueQuery(
                 newTechnique.IdDoctor,
-                newTechnique.Price
+                newTechnique.Price,
+                newTechnique.IdPatient
                 );
 
             return flagInsert;

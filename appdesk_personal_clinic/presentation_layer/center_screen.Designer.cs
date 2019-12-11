@@ -94,7 +94,13 @@
             this.tpTechnical = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbxDiagnostic = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tbxPriceTechnique = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tpPrescription = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -111,6 +117,17 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbxidPatientTechnique = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btnRefeshTechnique = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,6 +148,8 @@
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tpTechnical.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -142,6 +161,9 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -775,38 +797,103 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Location = new System.Drawing.Point(6, 162);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.panel11);
+            this.groupBox8.Controls.Add(this.dataGridView1);
+            this.groupBox8.Location = new System.Drawing.Point(6, 183);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(756, 180);
+            this.groupBox8.Size = new System.Drawing.Size(756, 159);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Detail information completed";
+            this.groupBox8.Text = "Technique data";
             // 
             // groupBox7
             // 
-            this.groupBox7.Location = new System.Drawing.Point(382, 6);
+            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.numericUpDown1);
+            this.groupBox7.Controls.Add(this.label24);
+            this.groupBox7.Controls.Add(this.button2);
+            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.cbxDiagnostic);
+            this.groupBox7.Location = new System.Drawing.Point(470, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(380, 150);
+            this.groupBox7.Size = new System.Drawing.Size(292, 150);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "All technique";
+            this.groupBox7.Text = "Technique proposals";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(18, 32);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Diagnostic:";
+            // 
+            // cbxDiagnostic
+            // 
+            this.cbxDiagnostic.FormattingEnabled = true;
+            this.cbxDiagnostic.Location = new System.Drawing.Point(84, 24);
+            this.cbxDiagnostic.Name = "cbxDiagnostic";
+            this.cbxDiagnostic.Size = new System.Drawing.Size(202, 21);
+            this.cbxDiagnostic.TabIndex = 0;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.tbxidPatientTechnique);
+            this.groupBox6.Controls.Add(this.label20);
+            this.groupBox6.Controls.Add(this.tbxPriceTechnique);
+            this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.dataGridView2);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(370, 150);
+            this.groupBox6.Size = new System.Drawing.Size(458, 171);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "List technique reviews";
+            this.groupBox6.Text = "List technique proposals reviews";
+            // 
+            // tbxPriceTechnique
+            // 
+            this.tbxPriceTechnique.Location = new System.Drawing.Point(312, 19);
+            this.tbxPriceTechnique.Name = "tbxPriceTechnique";
+            this.tbxPriceTechnique.Size = new System.Drawing.Size(140, 20);
+            this.tbxPriceTechnique.TabIndex = 3;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(222, 27);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(84, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Price technique:";
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 50);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(352, 125);
+            this.dataGridView2.Size = new System.Drawing.Size(446, 115);
             this.dataGridView2.TabIndex = 0;
             // 
             // tpPrescription
@@ -970,6 +1057,100 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 27);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(55, 13);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Id Patient:";
+            // 
+            // tbxidPatientTechnique
+            // 
+            this.tbxidPatientTechnique.Location = new System.Drawing.Point(65, 20);
+            this.tbxidPatientTechnique.Name = "tbxidPatientTechnique";
+            this.tbxidPatientTechnique.Size = new System.Drawing.Size(100, 20);
+            this.tbxidPatientTechnique.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(446, 135);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnRefeshTechnique);
+            this.panel11.Controls.Add(this.label21);
+            this.panel11.Controls.Add(this.textBox1);
+            this.panel11.Location = new System.Drawing.Point(470, 19);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(280, 59);
+            this.panel11.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(78, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Search:";
+            // 
+            // btnRefeshTechnique
+            // 
+            this.btnRefeshTechnique.Location = new System.Drawing.Point(181, 29);
+            this.btnRefeshTechnique.Name = "btnRefeshTechnique";
+            this.btnRefeshTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnRefeshTechnique.TabIndex = 2;
+            this.btnRefeshTechnique.Text = "Refesh";
+            this.btnRefeshTechnique.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label23.Location = new System.Drawing.Point(467, 140);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(255, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Double click on any data cell to update information...";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(18, 59);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Price:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 52);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(121, 20);
+            this.numericUpDown1.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(211, 51);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Get price";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // center_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1011,7 +1192,12 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tpTechnical.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1023,6 +1209,10 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1111,5 +1301,22 @@
         private System.Windows.Forms.ComboBox cbxMedicalRecordPatient;
         private System.Windows.Forms.Button btnRefeshMedicalGrid;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbxDiagnostic;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbxPriceTechnique;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbxidPatientTechnique;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnRefeshTechnique;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button3;
     }
 }

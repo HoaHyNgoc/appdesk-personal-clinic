@@ -76,6 +76,12 @@
     <Compile Include="center_custom_ui\patient_ui\update_patient_screen.Designer.cs">
       <DependentUpon>update_patient_screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="center_custom_ui\technique_ui\update_technique_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="center_custom_ui\technique_ui\update_technique_screen.Designer.cs">
+      <DependentUpon>update_technique_screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="center_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="center_custom_ui\patient_ui\update_patient_screen.resx">
       <DependentUpon>update_patient_screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="center_custom_ui\technique_ui\update_technique_screen.resx">
+      <DependentUpon>update_technique_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="center_screen.resx">
       <DependentUpon>center_screen.cs</DependentUpon>
