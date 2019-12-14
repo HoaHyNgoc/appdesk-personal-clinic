@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblDiagnostic;
         }
 
+        public int getPriceByIdDiagnostic(int _idDiagnostic)
+        {
+            var priceDiagnostic = new DIAGNOSTICTableAdapter().ScalarQuery(_idDiagnostic);
+            return Convert.ToInt32(priceDiagnostic);
+        }
+
         public int updateCoreDiagnostic(DiagnosticDTO originalDiagnostic)
         {
 
@@ -26,6 +32,7 @@ namespace database_access_layer
                 originalDiagnostic.IdSpecialist,
                 originalDiagnostic.NumberRoom,
                 originalDiagnostic.FullName,
+                originalDiagnostic.Price,
                 originalDiagnostic.IdDiagnostic
                 );
 
@@ -37,7 +44,8 @@ namespace database_access_layer
             int flagInsert = new DIAGNOSTICTableAdapter().insertDiagnosticQuery(
                 newDiagnostic.IdSpecialist,
                 newDiagnostic.NumberRoom,
-                newDiagnostic.FullName
+                newDiagnostic.FullName,
+                newDiagnostic.Price
                 );
 
             return flagInsert;

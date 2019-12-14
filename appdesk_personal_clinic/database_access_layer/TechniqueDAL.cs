@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblTechnique;
         }
 
+        public PersonalClinicDataSet.TECHNIQUEDataTable getCoreDataTarget(string contentSearch)
+        {
+            PersonalClinicDataSet.TECHNIQUEDataTable tblTechnique = new TECHNIQUETableAdapter().GetDataByContentSearch(Convert.ToInt32(contentSearch));
+            return tblTechnique;
+        }
+
         public int updateCoreTechnique(TechniqueDTO originalTechnique)
         {
 
