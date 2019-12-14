@@ -21,6 +21,12 @@ namespace business_logic_layer
             return _tblDelTechnique;
         }
 
+        public PersonalClinicDataSet.DETAIL_TECHNIQUEDataTable getDataTarget(string _idTechnique)
+        {
+            PersonalClinicDataSet.DETAIL_TECHNIQUEDataTable _tblDelTechnique = delTechniqueDal.getDataTarget(Convert.ToInt32(_idTechnique));
+            return _tblDelTechnique;
+        }
+
         public int updateDelTechnique(
             string idTechnique,
             string idDiagnostic,
