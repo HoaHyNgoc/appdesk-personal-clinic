@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 using presentation_layer.center_custom_ui.patient_ui;
 using presentation_layer.center_custom_ui.medical_ui;
+using presentation_layer.center_custom_ui.technique_ui;
 
 #endregion Import Screen
 
@@ -47,6 +48,7 @@ namespace presentation_layer
 
         MedicalRecordDTO medicalRecordDTO = new MedicalRecordDTO();
         PatientDTO patientDTO = new PatientDTO();
+        TechniqueDTO techniqueDTO = new TechniqueDTO();
 
         #endregion Import state data object transfer
 
@@ -201,6 +203,15 @@ namespace presentation_layer
 
         #region Technique
 
+        public TechniqueDTO selectCurrentRowDataTechniqueToControl()
+        {
+            techniqueDTO.IdPatient = Convert.ToInt32(dgvTechnique.CurrentRow.Cells["idPatient"].Value);
+            techniqueDTO.IdDoctor = Convert.ToInt32(dgvTechnique.CurrentRow.Cells["idDoctor"].Value);
+            techniqueDTO.Price = Convert.ToDecimal(dgvTechnique.CurrentRow.Cells["price"].Value);
+            techniqueDTO.IdTechnique = Convert.ToInt32(dgvTechnique.CurrentRow.Cells["idTechnique"].Value);
+            return techniqueDTO;
+        }
+
         public decimal sumPriceDetailTechnique(decimal price)
         {
             sumPriceTechnique += Convert.ToDecimal(price);
@@ -229,6 +240,11 @@ namespace presentation_layer
                 }
             }
             return true;
+        }
+
+        public void clearDataFieldTechnique()
+        {
+            tbxidPatientTechnique.Text = "";
         }
 
         #endregion Technique
@@ -375,6 +391,8 @@ namespace presentation_layer
 
         private void dgvTechnique_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            selectCurrentRowDataTechniqueToControl();
+
             lbidTechnique.Text = Convert.ToString(dgvTechnique.CurrentRow.Cells["idTechnique"].Value);
             string priceTechniqueSelected = dgvTechnique.CurrentRow.Cells["price"].Value.ToString();
             if (priceTechniqueSelected == "")
@@ -412,7 +430,15 @@ namespace presentation_layer
                     }
 
                     MessageBox.Show("Data list technique inserted...");
+
+                    techniqueBUS.updateTechnique(
+                        techniqueDTO.IdDoctor.ToString(),
+                        nudSumPriceTechnique.Value.ToString(),
+                        techniqueDTO.IdPatient.ToString(),
+                        techniqueDTO.IdTechnique.ToString());
+
                     resetControlDetailTechnique();
+                    getDateTechniqueGrid();
                 }
             }   
             return;
@@ -434,6 +460,25 @@ namespace presentation_layer
         {
             tbxSearchTechnique.Text = "";
             getDateTechniqueGrid();
+        }
+
+        private void dgvTechnique_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectCurrentRowDataTechniqueToControl();
+            Form frmUpdateTechnique = new update_technique_screen(techniqueDTO);
+            frmUpdateTechnique.Show();
+        }
+
+        private void btnInsertTechnique_Click(object sender, EventArgs e)
+        {
+            techniqueBUS.insertTechnique(
+                cbxTechniqueDoctor.SelectedValue.ToString(),
+                "0",
+                tbxidPatientTechnique.Text
+                );
+
+            MessageBox.Show("Data technique inserted...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            clearDataFieldTechnique();
         }
 
         #endregion Technique
@@ -480,10 +525,10 @@ namespace presentation_layer
 
 
 
+
+
         #endregion Medical process
 
         #endregion Events
-
-
     }
 }

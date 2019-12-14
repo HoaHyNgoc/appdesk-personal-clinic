@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblDelTechnique;
         }
 
+        public PersonalClinicDataSet.DETAIL_TECHNIQUEDataTable getDataTarget(int _idTechnique)
+        {
+            PersonalClinicDataSet.DETAIL_TECHNIQUEDataTable tblDelTechnique = new DETAIL_TECHNIQUETableAdapter().GetDataByIdTechnique(_idTechnique);
+            return tblDelTechnique;
+        }
+
         public int updateCoreDetailTechnique(DetailTechniqueDTO originalDelTechnique)
         {
 
