@@ -26,14 +26,20 @@ namespace presentation_layer
         #region Global Variables
 
         List<Control> listMedicalProcess = new List<Control>();
+        List<DetailTechniqueDTO> stateListDetailTechnique = new List<DetailTechniqueDTO>();
+        decimal sumPriceTechnique = 0;
         
         #endregion Global Variables
 
         #region Import global object business
 
         DoctorBUS doctorBUS = new DoctorBUS();
+        DiagnosticBUS diagnosticBUS = new DiagnosticBUS();
+        DetailTechniqueBUS detailTechniqueBUS = new DetailTechniqueBUS();
         MedicalRecordBUS medicalRecordBUS = new MedicalRecordBUS();
         PatientBUS patientBUS = new PatientBUS();
+        TechniqueBUS techniqueBUS = new TechniqueBUS();
+        
 
         #endregion Import global object business
 
@@ -58,6 +64,8 @@ namespace presentation_layer
         {
             getDataDoctorGird();
             getDataPatientGrid();
+            getDiagnosticGrid();
+            getDateTechniqueGrid();
         }
 
         public void initSwitchMenuOption()
@@ -91,12 +99,34 @@ namespace presentation_layer
             cbxMedicalRecordDoctor.DataSource = tableDoctor;
             cbxMedicalRecordDoctor.ValueMember = "idDoctor";
             cbxMedicalRecordDoctor.DisplayMember = "fullName";
+
+            // Fill data doctor - combobox technique
+            cbxTechniqueDoctor.DataSource = tableDoctor;
+            cbxTechniqueDoctor.ValueMember = "idDoctor";
+            cbxTechniqueDoctor.DisplayMember = "fullName";
         }
 
         public void getDataMedicalGrid()
         {
             PersonalClinicDataSet.MEDICAL_RECORDDataTable tableMedicalRecord = medicalRecordBUS.getDataTarget("");
             dgvMedicalRecord.DataSource = tableMedicalRecord;
+        }
+
+        public void getDiagnosticGrid()
+        {
+            PersonalClinicDataSet.DIAGNOSTICDataTable tableDiagnostic = diagnosticBUS.getData();
+
+            // Fill data diagnostic - combobox technique
+            cbxTechniqueDiagnostic.DataSource = tableDiagnostic;
+            cbxTechniqueDiagnostic.ValueMember = "idDiagnostic";
+            cbxTechniqueDiagnostic.DisplayMember = "fullName";
+
+        }
+
+        public void getDateTechniqueGrid()
+        {
+            PersonalClinicDataSet.TECHNIQUEDataTable tableTechnique = techniqueBUS.getData();
+            dgvTechnique.DataSource = tableTechnique;
         }
 
         #endregion Read data - objects
@@ -168,6 +198,40 @@ namespace presentation_layer
         }
 
         #endregion Medical record
+
+        #region Technique
+
+        public decimal sumPriceDetailTechnique(decimal price)
+        {
+            sumPriceTechnique += Convert.ToDecimal(price);
+            return sumPriceTechnique;
+        }
+
+        public void resetControlDetailTechnique()
+        {
+            sumPriceTechnique = 0;
+            nudSumPriceTechnique.Value = 0;
+            stateListDetailTechnique.Clear();
+            lvDetailTechnique.Items.Clear();
+        }
+
+        public bool isCheckDuplicateDetailTechnique(int _idCurrentDiagnostic)
+        {
+            if (stateListDetailTechnique.Count != 0)
+            {
+                foreach (DetailTechniqueDTO item in stateListDetailTechnique)
+                {
+                    if (item.IdDiagnostic == _idCurrentDiagnostic)
+                    {
+                        MessageBox.Show("Diagnostic already exist...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        #endregion Technique
 
         #endregion Methods
 
@@ -277,6 +341,103 @@ namespace presentation_layer
 
         #endregion Medical record
 
+        #region Technique
+
+        private void cbxTechniqueDiagnostic_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxTechniqueDiagnostic.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+            int priceDiagnostic = diagnosticBUS.getDataTargetIdDiagnostic(cbxTechniqueDiagnostic.SelectedValue.ToString());
+            nudTechniquePriceDiagnostic.Value = Convert.ToDecimal(priceDiagnostic);
+        }
+
+        private void btnTechniqueAddDelTechnique_Click(object sender, EventArgs e)
+        {
+            if (isCheckDuplicateDetailTechnique(Convert.ToInt32(cbxTechniqueDiagnostic.SelectedValue)))
+            {
+                DetailTechniqueDTO temp = new DetailTechniqueDTO();
+                temp.IdTechnique = Convert.ToInt32(lbidTechnique.Text);
+                temp.IdDiagnostic = Convert.ToInt32(cbxTechniqueDiagnostic.SelectedValue);
+                temp.Result = "process";
+                temp.Price = nudTechniquePriceDiagnostic.Value;
+
+                ListViewItem dataItemDetailTechnique = new ListViewItem(temp.IdDiagnostic.ToString());
+                ListViewItem.ListViewSubItem subPriceDiagnostic = new ListViewItem.ListViewSubItem(dataItemDetailTechnique, temp.Price.ToString());
+                dataItemDetailTechnique.SubItems.Add(subPriceDiagnostic);
+                lvDetailTechnique.Items.Add(dataItemDetailTechnique);
+
+                nudSumPriceTechnique.Value = sumPriceDetailTechnique(nudTechniquePriceDiagnostic.Value);
+
+                stateListDetailTechnique.Add(temp);
+                MessageBox.Show("Size list: " + stateListDetailTechnique.Count().ToString());
+            }
+        }
+
+        private void dgvTechnique_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbidTechnique.Text = Convert.ToString(dgvTechnique.CurrentRow.Cells["idTechnique"].Value);
+            string priceTechniqueSelected = dgvTechnique.CurrentRow.Cells["price"].Value.ToString();
+            if (priceTechniqueSelected == "")
+            {
+                nudSumPriceTechnique.Value = 0;
+                return;
+            }
+            nudSumPriceTechnique.Value = Convert.ToDecimal(priceTechniqueSelected);
+        }
+
+        private void btnResetTechniqueSumprice_Click(object sender, EventArgs e)
+        {
+            resetControlDetailTechnique();
+        }
+
+        private void btnInsertAllDetailTechnique_Click(object sender, EventArgs e)
+        {
+            DialogResult resultCancelUpdate = MessageBox.Show(
+            "The list of techniques has been tested (id Technique, list technique, price...) ",
+            "Confirm information",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+            if (resultCancelUpdate == DialogResult.Yes)
+            {              
+                if(stateListDetailTechnique.Count != 0)
+                {
+                    foreach (DetailTechniqueDTO item in stateListDetailTechnique)
+                    {
+                        detailTechniqueBUS.insertDelTechnique(
+                            item.IdTechnique.ToString(),
+                            item.IdDiagnostic.ToString(),
+                            item.Result.ToString(),
+                            item.Price.ToString()
+                            );
+                    }
+
+                    MessageBox.Show("Data list technique inserted...");
+                    resetControlDetailTechnique();
+                }
+            }   
+            return;
+        }
+
+        private void tbxSearchTechnique_TextChanged(object sender, EventArgs e)
+        {
+            PersonalClinicDataSet.TECHNIQUEDataTable tableTechniqueSearch = techniqueBUS.getDataTarget(tbxSearchTechnique.Text);
+            if (tbxSearchTechnique == null)
+            {
+                MessageBox.Show("Search information is null ...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            dgvTechnique.DataSource = tableTechniqueSearch;
+            return;
+        }
+
+        private void btnRefeshTechnique_Click(object sender, EventArgs e)
+        {
+            tbxSearchTechnique.Text = "";
+            getDateTechniqueGrid();
+        }
+
+        #endregion Technique
+
         #region Medical process
 
         public void setStateMedicalProcess(string labelStateMedicalProcess)
@@ -314,8 +475,15 @@ namespace presentation_layer
             setStateMedicalProcess(lbStateMedicalProcess04.Name);
         }
 
+
+
+
+
+
         #endregion Medical process
 
         #endregion Events
+
+
     }
 }

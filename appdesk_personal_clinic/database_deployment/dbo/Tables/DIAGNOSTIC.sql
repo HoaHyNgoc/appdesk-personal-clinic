@@ -4,5 +4,6 @@
     [idSpecialist] INT NOT NULL, 
     [numberRoom] NVARCHAR(10) NULL, 
     [fullName] NVARCHAR(50) NULL, 
+    [price] MONEY NULL, 
     CONSTRAINT [FK_idSpecialistDiagnostic_ToSPECIALIST] FOREIGN KEY ([idSpecialist]) REFERENCES [SPECIALIST]([idSpecialist])
 )

@@ -21,6 +21,16 @@ namespace business_logic_layer
             return _tblTechnique;
         }
 
+        public PersonalClinicDataSet.TECHNIQUEDataTable getDataTarget(string contentSearch)
+        {
+            if (contentSearch != "")
+            {
+                PersonalClinicDataSet.TECHNIQUEDataTable _tblTechnique = techniqueDal.getCoreDataTarget(contentSearch);
+                return _tblTechnique;
+            }
+            return null;
+        }
+
         public int updateTechnique(
             string idDoctor,
             string price,

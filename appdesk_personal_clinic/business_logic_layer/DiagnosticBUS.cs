@@ -21,10 +21,17 @@ namespace business_logic_layer
             return _tblDiagnostic;
         }
 
+        public int getDataTargetIdDiagnostic(string _idDiagnostic)
+        {
+            int _priceDiagnostic = diagnosticDal.getPriceByIdDiagnostic(Convert.ToInt32(_idDiagnostic));
+            return _priceDiagnostic;
+        }
+
         public int updateDiagnostic(
             string idSpecialist,
             string numberRoom,
             string fullName,
+            string price,
             string originalIdDiagnostic)
         {
 
@@ -32,6 +39,7 @@ namespace business_logic_layer
             currentDiagnosticDatarow.IdSpecialist = Convert.ToInt32(idSpecialist);
             currentDiagnosticDatarow.NumberRoom = Convert.ToString(numberRoom);
             currentDiagnosticDatarow.FullName = Convert.ToString(fullName);
+            currentDiagnosticDatarow.Price = Convert.ToDecimal(price);
             currentDiagnosticDatarow.IdDiagnostic = Convert.ToInt32(originalIdDiagnostic);
 
             return diagnosticDal.updateCoreDiagnostic(currentDiagnosticDatarow);
@@ -40,13 +48,15 @@ namespace business_logic_layer
         public int insertDiagnostic(
             string idSpecialist,
             string numberRoom,
-            string fullName)
+            string fullName,
+            string price)
         {
 
             DiagnosticDTO currentDiagnosticDatarow = new DiagnosticDTO();
             currentDiagnosticDatarow.IdSpecialist = Convert.ToInt32(idSpecialist);
             currentDiagnosticDatarow.NumberRoom = Convert.ToString(numberRoom);
             currentDiagnosticDatarow.FullName = Convert.ToString(fullName);
+            currentDiagnosticDatarow.Price = Convert.ToDecimal(price);
 
             return diagnosticDal.insertCoreDiagnostic(currentDiagnosticDatarow);
         }

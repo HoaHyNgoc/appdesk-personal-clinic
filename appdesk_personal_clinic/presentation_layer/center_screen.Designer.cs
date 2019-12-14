@@ -93,13 +93,25 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tpTechnical = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnRefeshTechnique = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tbxSearchTechnique = new System.Windows.Forms.TextBox();
+            this.dgvTechnique = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsertAllDetailTechnique = new System.Windows.Forms.Button();
+            this.nudTechniquePriceDiagnostic = new System.Windows.Forms.NumericUpDown();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btnTechniqueRemoveDelTechnique = new System.Windows.Forms.Button();
+            this.btnTechniqueAddDelTechnique = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.cbxDiagnostic = new System.Windows.Forms.ComboBox();
+            this.cbxTechniqueDiagnostic = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.tbxPriceTechnique = new System.Windows.Forms.TextBox();
+            this.cbxTechniqueDoctor = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbxidPatientTechnique = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tpPrescription = new System.Windows.Forms.TabPage();
@@ -117,19 +129,14 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbxidPatientTechnique = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btnRefeshTechnique = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnInsertTechnique = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lbidTechnique = new System.Windows.Forms.Label();
+            this.lvDetailTechnique = new System.Windows.Forms.ListView();
+            this.fullNameDiagnostic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.priceDiagnostic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nudSumPriceTechnique = new System.Windows.Forms.NumericUpDown();
+            this.btnResetTechniqueSumprice = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -151,7 +158,10 @@
             this.panel6.SuspendLayout();
             this.tpTechnical.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTechnique)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTechniquePriceDiagnostic)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -163,9 +173,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSumPriceTechnique)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -799,25 +807,86 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.btnInsertTechnique);
+            this.groupBox8.Controls.Add(this.cbxTechniqueDoctor);
             this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.label25);
             this.groupBox8.Controls.Add(this.panel11);
-            this.groupBox8.Controls.Add(this.dataGridView1);
-            this.groupBox8.Location = new System.Drawing.Point(6, 183);
+            this.groupBox8.Controls.Add(this.tbxidPatientTechnique);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.dgvTechnique);
+            this.groupBox8.Location = new System.Drawing.Point(6, 156);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(756, 159);
+            this.groupBox8.Size = new System.Drawing.Size(756, 198);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Technique data";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label23.Location = new System.Drawing.Point(467, 140);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(255, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Double click on any data cell to update information...";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnRefeshTechnique);
+            this.panel11.Controls.Add(this.label21);
+            this.panel11.Controls.Add(this.tbxSearchTechnique);
+            this.panel11.Location = new System.Drawing.Point(470, 19);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(280, 59);
+            this.panel11.TabIndex = 1;
+            // 
+            // btnRefeshTechnique
+            // 
+            this.btnRefeshTechnique.Location = new System.Drawing.Point(181, 29);
+            this.btnRefeshTechnique.Name = "btnRefeshTechnique";
+            this.btnRefeshTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnRefeshTechnique.TabIndex = 2;
+            this.btnRefeshTechnique.Text = "Refesh";
+            this.btnRefeshTechnique.UseVisualStyleBackColor = true;
+            this.btnRefeshTechnique.Click += new System.EventHandler(this.btnRefeshTechnique_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 10);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Search:";
+            // 
+            // tbxSearchTechnique
+            // 
+            this.tbxSearchTechnique.Location = new System.Drawing.Point(78, 3);
+            this.tbxSearchTechnique.Name = "tbxSearchTechnique";
+            this.tbxSearchTechnique.Size = new System.Drawing.Size(178, 20);
+            this.tbxSearchTechnique.TabIndex = 0;
+            this.tbxSearchTechnique.TextChanged += new System.EventHandler(this.tbxSearchTechnique_TextChanged);
+            // 
+            // dgvTechnique
+            // 
+            this.dgvTechnique.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTechnique.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTechnique.Location = new System.Drawing.Point(6, 48);
+            this.dgvTechnique.Name = "dgvTechnique";
+            this.dgvTechnique.Size = new System.Drawing.Size(446, 132);
+            this.dgvTechnique.TabIndex = 0;
+            this.dgvTechnique.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTechnique_CellClick);
+            // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button3);
-            this.groupBox7.Controls.Add(this.numericUpDown1);
+            this.groupBox7.Controls.Add(this.nudTechniquePriceDiagnostic);
             this.groupBox7.Controls.Add(this.label24);
-            this.groupBox7.Controls.Add(this.button2);
-            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.btnTechniqueRemoveDelTechnique);
+            this.groupBox7.Controls.Add(this.btnTechniqueAddDelTechnique);
             this.groupBox7.Controls.Add(this.label18);
-            this.groupBox7.Controls.Add(this.cbxDiagnostic);
+            this.groupBox7.Controls.Add(this.cbxTechniqueDiagnostic);
             this.groupBox7.Location = new System.Drawing.Point(470, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(292, 150);
@@ -825,23 +894,56 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Technique proposals";
             // 
-            // button2
+            // btnInsertAllDetailTechnique
             // 
-            this.button2.Location = new System.Drawing.Point(6, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInsertAllDetailTechnique.Location = new System.Drawing.Point(383, 80);
+            this.btnInsertAllDetailTechnique.Name = "btnInsertAllDetailTechnique";
+            this.btnInsertAllDetailTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertAllDetailTechnique.TabIndex = 6;
+            this.btnInsertAllDetailTechnique.Text = "Get price";
+            this.btnInsertAllDetailTechnique.UseVisualStyleBackColor = true;
+            this.btnInsertAllDetailTechnique.Click += new System.EventHandler(this.btnInsertAllDetailTechnique_Click);
             // 
-            // button1
+            // nudTechniquePriceDiagnostic
             // 
-            this.button1.Location = new System.Drawing.Point(6, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nudTechniquePriceDiagnostic.Enabled = false;
+            this.nudTechniquePriceDiagnostic.Location = new System.Drawing.Point(84, 52);
+            this.nudTechniquePriceDiagnostic.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudTechniquePriceDiagnostic.Name = "nudTechniquePriceDiagnostic";
+            this.nudTechniquePriceDiagnostic.Size = new System.Drawing.Size(121, 20);
+            this.nudTechniquePriceDiagnostic.TabIndex = 5;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(18, 59);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Price:";
+            // 
+            // btnTechniqueRemoveDelTechnique
+            // 
+            this.btnTechniqueRemoveDelTechnique.Location = new System.Drawing.Point(6, 121);
+            this.btnTechniqueRemoveDelTechnique.Name = "btnTechniqueRemoveDelTechnique";
+            this.btnTechniqueRemoveDelTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnTechniqueRemoveDelTechnique.TabIndex = 4;
+            this.btnTechniqueRemoveDelTechnique.Text = ">>";
+            this.btnTechniqueRemoveDelTechnique.UseVisualStyleBackColor = true;
+            // 
+            // btnTechniqueAddDelTechnique
+            // 
+            this.btnTechniqueAddDelTechnique.Location = new System.Drawing.Point(6, 92);
+            this.btnTechniqueAddDelTechnique.Name = "btnTechniqueAddDelTechnique";
+            this.btnTechniqueAddDelTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnTechniqueAddDelTechnique.TabIndex = 3;
+            this.btnTechniqueAddDelTechnique.Text = "<<";
+            this.btnTechniqueAddDelTechnique.UseVisualStyleBackColor = true;
+            this.btnTechniqueAddDelTechnique.Click += new System.EventHandler(this.btnTechniqueAddDelTechnique_Click);
             // 
             // label18
             // 
@@ -852,36 +954,64 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "Diagnostic:";
             // 
-            // cbxDiagnostic
+            // cbxTechniqueDiagnostic
             // 
-            this.cbxDiagnostic.FormattingEnabled = true;
-            this.cbxDiagnostic.Location = new System.Drawing.Point(84, 24);
-            this.cbxDiagnostic.Name = "cbxDiagnostic";
-            this.cbxDiagnostic.Size = new System.Drawing.Size(202, 21);
-            this.cbxDiagnostic.TabIndex = 0;
+            this.cbxTechniqueDiagnostic.FormattingEnabled = true;
+            this.cbxTechniqueDiagnostic.Location = new System.Drawing.Point(84, 24);
+            this.cbxTechniqueDiagnostic.Name = "cbxTechniqueDiagnostic";
+            this.cbxTechniqueDiagnostic.Size = new System.Drawing.Size(202, 21);
+            this.cbxTechniqueDiagnostic.TabIndex = 0;
+            this.cbxTechniqueDiagnostic.TextChanged += new System.EventHandler(this.cbxTechniqueDiagnostic_TextChanged);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox1);
-            this.groupBox6.Controls.Add(this.label25);
-            this.groupBox6.Controls.Add(this.tbxidPatientTechnique);
-            this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.tbxPriceTechnique);
+            this.groupBox6.Controls.Add(this.btnInsertAllDetailTechnique);
+            this.groupBox6.Controls.Add(this.btnResetTechniqueSumprice);
+            this.groupBox6.Controls.Add(this.nudSumPriceTechnique);
+            this.groupBox6.Controls.Add(this.lvDetailTechnique);
+            this.groupBox6.Controls.Add(this.lbidTechnique);
+            this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.dataGridView2);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(458, 171);
+            this.groupBox6.Size = new System.Drawing.Size(458, 150);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "List technique proposals reviews";
             // 
-            // tbxPriceTechnique
+            // cbxTechniqueDoctor
             // 
-            this.tbxPriceTechnique.Location = new System.Drawing.Point(312, 19);
-            this.tbxPriceTechnique.Name = "tbxPriceTechnique";
-            this.tbxPriceTechnique.Size = new System.Drawing.Size(140, 20);
-            this.tbxPriceTechnique.TabIndex = 3;
+            this.cbxTechniqueDoctor.FormattingEnabled = true;
+            this.cbxTechniqueDoctor.Location = new System.Drawing.Point(236, 18);
+            this.cbxTechniqueDoctor.Name = "cbxTechniqueDoctor";
+            this.cbxTechniqueDoctor.Size = new System.Drawing.Size(125, 21);
+            this.cbxTechniqueDoctor.TabIndex = 7;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(178, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Doctor:";
+            // 
+            // tbxidPatientTechnique
+            // 
+            this.tbxidPatientTechnique.Location = new System.Drawing.Point(68, 19);
+            this.tbxidPatientTechnique.Name = "tbxidPatientTechnique";
+            this.tbxidPatientTechnique.Size = new System.Drawing.Size(97, 20);
+            this.tbxidPatientTechnique.TabIndex = 5;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(10, 26);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(55, 13);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Id Patient:";
             // 
             // label19
             // 
@@ -895,9 +1025,9 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 75);
+            this.dataGridView2.Location = new System.Drawing.Point(190, 16);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(446, 90);
+            this.dataGridView2.Size = new System.Drawing.Size(30, 23);
             this.dataGridView2.TabIndex = 0;
             // 
             // tpPrescription
@@ -1061,116 +1191,79 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // btnInsertTechnique
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 27);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(55, 13);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Id Patient:";
+            this.btnInsertTechnique.Location = new System.Drawing.Point(377, 16);
+            this.btnInsertTechnique.Name = "btnInsertTechnique";
+            this.btnInsertTechnique.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertTechnique.TabIndex = 3;
+            this.btnInsertTechnique.Text = "Insert";
+            this.btnInsertTechnique.UseVisualStyleBackColor = true;
             // 
-            // tbxidPatientTechnique
+            // label26
             // 
-            this.tbxidPatientTechnique.Location = new System.Drawing.Point(65, 20);
-            this.tbxidPatientTechnique.Name = "tbxidPatientTechnique";
-            this.tbxidPatientTechnique.Size = new System.Drawing.Size(125, 20);
-            this.tbxidPatientTechnique.TabIndex = 5;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(7, 24);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 13);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Id Technique:";
             // 
-            // dataGridView1
+            // lbidTechnique
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 135);
-            this.dataGridView1.TabIndex = 0;
+            this.lbidTechnique.AutoSize = true;
+            this.lbidTechnique.Location = new System.Drawing.Point(86, 24);
+            this.lbidTechnique.Name = "lbidTechnique";
+            this.lbidTechnique.Size = new System.Drawing.Size(31, 13);
+            this.lbidTechnique.TabIndex = 5;
+            this.lbidTechnique.Text = "4000";
             // 
-            // panel11
+            // lvDetailTechnique
             // 
-            this.panel11.Controls.Add(this.btnRefeshTechnique);
-            this.panel11.Controls.Add(this.label21);
-            this.panel11.Controls.Add(this.textBox1);
-            this.panel11.Location = new System.Drawing.Point(470, 19);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(280, 59);
-            this.panel11.TabIndex = 1;
+            this.lvDetailTechnique.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.lvDetailTechnique.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.fullNameDiagnostic,
+            this.priceDiagnostic});
+            this.lvDetailTechnique.HideSelection = false;
+            this.lvDetailTechnique.Location = new System.Drawing.Point(6, 51);
+            this.lvDetailTechnique.Name = "lvDetailTechnique";
+            this.lvDetailTechnique.Size = new System.Drawing.Size(328, 93);
+            this.lvDetailTechnique.TabIndex = 6;
+            this.lvDetailTechnique.UseCompatibleStateImageBehavior = false;
+            this.lvDetailTechnique.View = System.Windows.Forms.View.Details;
             // 
-            // textBox1
+            // fullNameDiagnostic
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 0;
+            this.fullNameDiagnostic.Text = "Diagnostic";
+            this.fullNameDiagnostic.Width = 154;
             // 
-            // label21
+            // priceDiagnostic
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 10);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 13);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Search:";
+            this.priceDiagnostic.Text = "Price";
+            this.priceDiagnostic.Width = 166;
             // 
-            // btnRefeshTechnique
+            // nudSumPriceTechnique
             // 
-            this.btnRefeshTechnique.Location = new System.Drawing.Point(181, 29);
-            this.btnRefeshTechnique.Name = "btnRefeshTechnique";
-            this.btnRefeshTechnique.Size = new System.Drawing.Size(75, 23);
-            this.btnRefeshTechnique.TabIndex = 2;
-            this.btnRefeshTechnique.Text = "Refesh";
-            this.btnRefeshTechnique.UseVisualStyleBackColor = true;
+            this.nudSumPriceTechnique.Enabled = false;
+            this.nudSumPriceTechnique.Location = new System.Drawing.Point(312, 20);
+            this.nudSumPriceTechnique.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudSumPriceTechnique.Name = "nudSumPriceTechnique";
+            this.nudSumPriceTechnique.Size = new System.Drawing.Size(121, 20);
+            this.nudSumPriceTechnique.TabIndex = 6;
             // 
-            // label23
+            // btnResetTechniqueSumprice
             // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label23.Location = new System.Drawing.Point(467, 140);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(255, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Double click on any data cell to update information...";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 59);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(34, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Price:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 52);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(121, 20);
-            this.numericUpDown1.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(211, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Get price";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(7, 51);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(42, 13);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Doctor:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 7;
+            this.btnResetTechniqueSumprice.Location = new System.Drawing.Point(383, 51);
+            this.btnResetTechniqueSumprice.Name = "btnResetTechniqueSumprice";
+            this.btnResetTechniqueSumprice.Size = new System.Drawing.Size(75, 23);
+            this.btnResetTechniqueSumprice.TabIndex = 7;
+            this.btnResetTechniqueSumprice.Text = "Reset";
+            this.btnResetTechniqueSumprice.UseVisualStyleBackColor = true;
+            this.btnResetTechniqueSumprice.Click += new System.EventHandler(this.btnResetTechniqueSumprice_Click);
             // 
             // center_screen
             // 
@@ -1215,8 +1308,12 @@
             this.tpTechnical.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTechnique)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTechniquePriceDiagnostic)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1230,10 +1327,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSumPriceTechnique)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1322,24 +1416,31 @@
         private System.Windows.Forms.ComboBox cbxMedicalRecordPatient;
         private System.Windows.Forms.Button btnRefeshMedicalGrid;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbxDiagnostic;
+        private System.Windows.Forms.ComboBox cbxTechniqueDiagnostic;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tbxPriceTechnique;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTechniqueRemoveDelTechnique;
+        private System.Windows.Forms.Button btnTechniqueAddDelTechnique;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbxidPatientTechnique;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTechnique;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxSearchTechnique;
         private System.Windows.Forms.Button btnRefeshTechnique;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown nudTechniquePriceDiagnostic;
+        private System.Windows.Forms.Button btnInsertAllDetailTechnique;
+        private System.Windows.Forms.ComboBox cbxTechniqueDoctor;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnInsertTechnique;
+        private System.Windows.Forms.Label lbidTechnique;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ListView lvDetailTechnique;
+        private System.Windows.Forms.ColumnHeader fullNameDiagnostic;
+        private System.Windows.Forms.ColumnHeader priceDiagnostic;
+        private System.Windows.Forms.NumericUpDown nudSumPriceTechnique;
+        private System.Windows.Forms.Button btnResetTechniqueSumprice;
     }
 }
