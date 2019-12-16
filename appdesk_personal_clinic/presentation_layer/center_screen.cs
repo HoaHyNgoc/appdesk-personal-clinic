@@ -29,6 +29,7 @@ namespace presentation_layer
         List<Control> listMedicalProcess = new List<Control>();
         List<DetailTechniqueDTO> stateListDetailTechnique = new List<DetailTechniqueDTO>();
         decimal sumPriceTechnique = 0;
+        decimal sumPricePrescription = 0;
         
         #endregion Global Variables
 
@@ -40,6 +41,8 @@ namespace presentation_layer
         MedicalRecordBUS medicalRecordBUS = new MedicalRecordBUS();
         PatientBUS patientBUS = new PatientBUS();
         TechniqueBUS techniqueBUS = new TechniqueBUS();
+        PrescriptionBUS prescriptionBUS = new PrescriptionBUS();
+        MedicineBUS medicineBUS = new MedicineBUS();
         
 
         #endregion Import global object business
@@ -49,6 +52,7 @@ namespace presentation_layer
         MedicalRecordDTO medicalRecordDTO = new MedicalRecordDTO();
         PatientDTO patientDTO = new PatientDTO();
         TechniqueDTO techniqueDTO = new TechniqueDTO();
+        PrescriptionDTO prescriptionDTO = new PrescriptionDTO();
 
         #endregion Import state data object transfer
 
@@ -68,6 +72,8 @@ namespace presentation_layer
             getDataPatientGrid();
             getDiagnosticGrid();
             getDateTechniqueGrid();
+            getDatePrescriptionGrid();
+            getDateMedicine();
         }
 
         public void initSwitchMenuOption()
@@ -129,6 +135,21 @@ namespace presentation_layer
         {
             PersonalClinicDataSet.TECHNIQUEDataTable tableTechnique = techniqueBUS.getData();
             dgvTechnique.DataSource = tableTechnique;
+        }
+
+        public void getDatePrescriptionGrid()
+        {
+            PersonalClinicDataSet.PRESCRIPTIONDataTable tablePrescription = prescriptionBUS.getData();
+            dgvPrescription.DataSource = tablePrescription;
+        }
+
+        public void getDateMedicine()
+        {
+            PersonalClinicDataSet.MEDICINEDataTable tableMedicine = medicineBUS.getData();
+            ColCbxMedicine.DataSource = tableMedicine;
+
+            ColCbxMedicine.ValueMember = "idMedicine";
+            ColCbxMedicine.DisplayMember = "fullName";
         }
 
         #endregion Read data - objects
@@ -248,6 +269,31 @@ namespace presentation_layer
         }
 
         #endregion Technique
+
+        #region Prescription
+
+        public void clearDataFieldPrescription()
+        {
+            tbxidPatientPrescription.Text = "";
+            tbxCoulusionPrescription.Text = "";
+        }
+
+        public PrescriptionDTO selectCurrentRowDataPrescriptionToControl()
+        {
+            prescriptionDTO.IdPrescription = Convert.ToInt32(dgvPrescription.CurrentRow.Cells["idPrescription"].Value);
+            prescriptionDTO.IdPatient = Convert.ToInt32(dgvPrescription.CurrentRow.Cells["idPatient"].Value);
+            prescriptionDTO.Price = Convert.ToDecimal(dgvPrescription.CurrentRow.Cells["price"].Value);
+            prescriptionDTO.ConclusionMedical = Convert.ToString(dgvPrescription.CurrentRow.Cells["conclusionMedical"].Value);
+            return prescriptionDTO;
+        }
+
+        public decimal sumPriceDetailPrescription(decimal price)
+        {
+            sumPricePrescription += Convert.ToDecimal(price);
+            return sumPricePrescription;
+        }
+
+        #endregion Prescription
 
         #endregion Methods
 
@@ -483,6 +529,93 @@ namespace presentation_layer
 
         #endregion Technique
 
+        #region Prescription
+
+        private void btnInsertPrescription_Click(object sender, EventArgs e)
+        {
+            prescriptionBUS.insertPrescription(
+                tbxidPatientPrescription.Text,
+                tbxCoulusionPrescription.Text,
+                "0"
+                );
+            MessageBox.Show("Data prescription inserted...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            clearDataFieldPrescription();
+            getDatePrescriptionGrid();
+        }
+
+        private void btnRefeshPrescription_Click(object sender, EventArgs e)
+        {
+            clearDataFieldTechnique();
+            getDatePrescriptionGrid();
+        }
+
+        private void tbxSearchPrescription_TextChanged(object sender, EventArgs e)
+        {
+            PersonalClinicDataSet.PRESCRIPTIONDataTable tablePrescriptionSearch = prescriptionBUS.getDataTarget(tbxSearchPrescription.Text);
+            if (tbxSearchTechnique == null)
+            {
+                MessageBox.Show("Search information is null ...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            dgvPrescription.DataSource = tablePrescriptionSearch;
+            return;
+        }
+
+        private void dgvPrescription_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectCurrentRowDataPrescriptionToControl();
+
+            lbidPrescription.Text = Convert.ToString(dgvPrescription.CurrentRow.Cells["idPrescription"].Value);
+            string pricePrescriptionSelected = dgvPrescription.CurrentRow.Cells["price"].Value.ToString();
+            if (pricePrescriptionSelected == "")
+            {
+                nudSumPricePrescription.Value = 0;
+                return;
+            }
+            nudSumPricePrescription.Value = Convert.ToDecimal(pricePrescriptionSelected);
+        }
+
+        private void btnGetPricePrescription_Click(object sender, EventArgs e)
+        {
+            sumPricePrescription = 0;
+            for (int i = 0; i < dgvDelPrescription.RowCount - 1; i++)
+            {
+                decimal unitPrice = Convert.ToDecimal(dgvDelPrescription.Rows[i].Cells[1].Value);
+                int currentNumber = Convert.ToInt32(dgvDelPrescription.Rows[i].Cells[2].Value);
+                //MessageBox.Show(dgvDelPrescription.Rows[i].Cells[0].Value.ToString());
+                dgvDelPrescription.Rows[i].Cells[3].Value = Convert.ToString(unitPrice * currentNumber);
+
+                sumPriceDetailPrescription(Convert.ToDecimal(unitPrice * currentNumber));
+            }
+
+            nudSumPricePrescription.Value = sumPricePrescription;
+        }
+
+        private void dgvDelPrescription_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            //GET OUR COMBO OBJECT
+            ComboBox comboCell = e.Control as ComboBox;
+            if (comboCell != null)
+            {
+                comboCell.SelectedIndexChanged += new EventHandler(comboCell_SelectedIndexChanged);
+            }
+        }
+
+        public void comboCell_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((sender as ComboBox).SelectedValue == null)
+                return;
+            string cellText = (sender as ComboBox).SelectedValue.ToString();
+
+            //retrieve data from database using this cellText
+            if (cellText == "System.Data.DataRowView")
+                return;
+            int priceMedicine = medicineBUS.getDataTargetIdMedicine(cellText);
+            dgvDelPrescription.CurrentRow.Cells[1].Value = Convert.ToString(priceMedicine);
+        }
+
+        #endregion Prescription
+
         #region Medical process
 
         public void setStateMedicalProcess(string labelStateMedicalProcess)
@@ -519,6 +652,8 @@ namespace presentation_layer
             tabControlMain.SelectedTab = tpPrescription;
             setStateMedicalProcess(lbStateMedicalProcess04.Name);
         }
+
+
 
 
 

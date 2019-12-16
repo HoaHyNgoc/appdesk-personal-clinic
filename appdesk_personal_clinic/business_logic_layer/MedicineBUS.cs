@@ -21,6 +21,12 @@ namespace business_logic_layer
             return _tblMedicine;
         }
 
+        public int getDataTargetIdMedicine(string _idMedicine)
+        {
+            int _priceMedicine = medicineDal.getPriceByIdMedicine(Convert.ToInt32(_idMedicine));
+            return _priceMedicine;
+        }
+
         public int updateMedicine(
             string idUnitMedicine,
             string fullName,

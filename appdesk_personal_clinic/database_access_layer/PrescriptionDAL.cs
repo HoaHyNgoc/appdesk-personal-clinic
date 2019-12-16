@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblPrescription;
         }
 
+        public PersonalClinicDataSet.PRESCRIPTIONDataTable getCoreDataTarget(string contentSearch)
+        {
+            PersonalClinicDataSet.PRESCRIPTIONDataTable tblPrescription = new PRESCRIPTIONTableAdapter().GetDataByContentSearch(Convert.ToInt32(contentSearch));
+            return tblPrescription;
+        }
+
         public int updateCorePrescription(PrescriptionDTO originalPrescription)
         {
 

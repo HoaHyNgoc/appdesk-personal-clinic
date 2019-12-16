@@ -21,6 +21,16 @@ namespace business_logic_layer
             return _tblPrescription;
         }
 
+        public PersonalClinicDataSet.PRESCRIPTIONDataTable getDataTarget(string contentSearch)
+        {
+            if (contentSearch != "")
+            {
+                PersonalClinicDataSet.PRESCRIPTIONDataTable _tblPrescription = prescriptionDal.getCoreDataTarget(contentSearch);
+                return _tblPrescription;
+            }
+            return null;
+        }
+
         public int updatePrescription(
             string idPatient,
             string conclusionMedical,
