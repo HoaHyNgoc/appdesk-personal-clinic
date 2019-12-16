@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.nudBackupSumPriceTechnique = new System.Windows.Forms.NumericUpDown();
             this.lbidDoctor = new System.Windows.Forms.Label();
             this.lbidTechnique = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,20 +56,18 @@
             this.btnUpdateTechnique = new System.Windows.Forms.Button();
             this.btnCancelUpdateTechnique = new System.Windows.Forms.Button();
             this.dgvbackupDetailTechnique = new System.Windows.Forms.DataGridView();
-            this.nudBackupSumPriceTechnique = new System.Windows.Forms.NumericUpDown();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBackupSumPriceTechnique)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceDetailTechnique)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSumPriceTechnique)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailTechnique)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbackupDetailTechnique)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBackupSumPriceTechnique)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.nudBackupSumPriceTechnique);
             this.groupBox3.Controls.Add(this.lbidDoctor);
             this.groupBox3.Controls.Add(this.lbidTechnique);
             this.groupBox3.Controls.Add(this.label2);
@@ -81,6 +80,19 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Information update";
+            // 
+            // nudBackupSumPriceTechnique
+            // 
+            this.nudBackupSumPriceTechnique.Enabled = false;
+            this.nudBackupSumPriceTechnique.Location = new System.Drawing.Point(480, 418);
+            this.nudBackupSumPriceTechnique.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudBackupSumPriceTechnique.Name = "nudBackupSumPriceTechnique";
+            this.nudBackupSumPriceTechnique.Size = new System.Drawing.Size(121, 20);
+            this.nudBackupSumPriceTechnique.TabIndex = 10;
             // 
             // lbidDoctor
             // 
@@ -333,29 +345,17 @@
             // dgvbackupDetailTechnique
             // 
             this.dgvbackupDetailTechnique.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvbackupDetailTechnique.Location = new System.Drawing.Point(18, 310);
+            this.dgvbackupDetailTechnique.Location = new System.Drawing.Point(18, 393);
             this.dgvbackupDetailTechnique.Name = "dgvbackupDetailTechnique";
-            this.dgvbackupDetailTechnique.Size = new System.Drawing.Size(439, 128);
+            this.dgvbackupDetailTechnique.Size = new System.Drawing.Size(439, 45);
             this.dgvbackupDetailTechnique.TabIndex = 11;
-            // 
-            // nudBackupSumPriceTechnique
-            // 
-            this.nudBackupSumPriceTechnique.Enabled = false;
-            this.nudBackupSumPriceTechnique.Location = new System.Drawing.Point(319, 272);
-            this.nudBackupSumPriceTechnique.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nudBackupSumPriceTechnique.Name = "nudBackupSumPriceTechnique";
-            this.nudBackupSumPriceTechnique.Size = new System.Drawing.Size(121, 20);
-            this.nudBackupSumPriceTechnique.TabIndex = 10;
             // 
             // update_technique_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.Controls.Add(this.nudBackupSumPriceTechnique);
             this.Controls.Add(this.dgvbackupDetailTechnique);
             this.Controls.Add(this.btnCancelUpdateTechnique);
             this.Controls.Add(this.btnUpdateTechnique);
@@ -366,6 +366,7 @@
             this.Load += new System.EventHandler(this.update_technique_screen_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBackupSumPriceTechnique)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPriceDetailTechnique)).EndInit();
@@ -374,7 +375,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSumPriceTechnique)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailTechnique)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbackupDetailTechnique)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBackupSumPriceTechnique)).EndInit();
             this.ResumeLayout(false);
 
         }

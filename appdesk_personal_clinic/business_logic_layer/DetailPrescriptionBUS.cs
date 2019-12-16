@@ -21,6 +21,12 @@ namespace business_logic_layer
             return _tblDelPrescription;
         }
 
+        public PersonalClinicDataSet.DETAIL_PRESCRIPTIONDataTable getDataTarget(string _idPrescription)
+        {
+            PersonalClinicDataSet.DETAIL_PRESCRIPTIONDataTable _tblDelPrescription = delPrescriptionDal.getDataTarget(Convert.ToInt32(_idPrescription));
+            return _tblDelPrescription;
+        }
+
         public int updateDelPrescription(
             string idPrescription,
             string idMedicine,
