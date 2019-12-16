@@ -1155,7 +1155,7 @@
             this.groupBox11.Size = new System.Drawing.Size(755, 150);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "List technique proposals reviews";
+            this.groupBox11.Text = "List medicine reviews";
             // 
             // dgvDelPrescription
             // 
@@ -1279,7 +1279,7 @@
             this.groupBox9.Size = new System.Drawing.Size(756, 198);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Technique data";
+            this.groupBox9.Text = "Prescription data";
             // 
             // tbxCoulusionPrescription
             // 

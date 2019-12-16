@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using presentation_layer.center_custom_ui.patient_ui;
 using presentation_layer.center_custom_ui.medical_ui;
 using presentation_layer.center_custom_ui.technique_ui;
+using presentation_layer.center_custom_ui.prescription_ui;
 
 #endregion Import Screen
 
@@ -686,7 +687,9 @@ namespace presentation_layer
 
         private void dgvPrescription_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            selectCurrentRowDataPrescriptionToControl();
+            Form frmUpdatePrescription = new update_prescription_ui(prescriptionDTO);
+            frmUpdatePrescription.ShowDialog();
         }
 
         #endregion Prescription

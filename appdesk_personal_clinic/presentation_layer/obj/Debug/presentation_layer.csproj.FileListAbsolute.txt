@@ -24,3 +24,4 @@ D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.screen_debug_data.resources
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.center_custom_ui.medical_ui.update_medical_screen.resources
 D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.center_custom_ui.technique_ui.update_technique_screen.resources
+D:\repository\appdesk-personal-clinic\appdesk_personal_clinic\presentation_layer\obj\Debug\presentation_layer.center_custom_ui.prescription_ui.update_prescription_ui.resources

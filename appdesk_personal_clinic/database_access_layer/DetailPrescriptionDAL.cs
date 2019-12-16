@@ -19,6 +19,12 @@ namespace database_access_layer
             return tblDelPrescription;
         }
 
+        public PersonalClinicDataSet.DETAIL_PRESCRIPTIONDataTable getDataTarget(int _idPrescription)
+        {
+            PersonalClinicDataSet.DETAIL_PRESCRIPTIONDataTable tblDelPrescription = new DETAIL_PRESCRIPTIONTableAdapter().GetDataByIdPrescription(_idPrescription);
+            return tblDelPrescription;
+        }
+
         public int updateCoreDetailPrescription(DetailPrescriptionDTO originalDelPrescription)
         {
 
