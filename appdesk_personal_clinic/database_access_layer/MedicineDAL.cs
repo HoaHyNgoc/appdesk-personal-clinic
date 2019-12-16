@@ -17,6 +17,12 @@ namespace database_access_layer
             return tblMedicine;
         }
 
+        public int getPriceByIdMedicine(int _idMedicine)
+        {
+            var priceMedicine = new MEDICINETableAdapter().ScalarQuery(_idMedicine);
+            return Convert.ToInt32(priceMedicine);
+        }
+
         public int updateCoreMedicine(MedicineDTO originalMedicine)
         {
             int flagUpdate = new MEDICINETableAdapter().updateMedicineQuery(
