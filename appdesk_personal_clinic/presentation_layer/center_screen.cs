@@ -42,6 +42,7 @@ namespace presentation_layer
         PatientBUS patientBUS = new PatientBUS();
         TechniqueBUS techniqueBUS = new TechniqueBUS();
         PrescriptionBUS prescriptionBUS = new PrescriptionBUS();
+        DetailPrescriptionBUS delPrescriptionBUS = new DetailPrescriptionBUS();
         MedicineBUS medicineBUS = new MedicineBUS();
         
 
@@ -291,6 +292,25 @@ namespace presentation_layer
         {
             sumPricePrescription += Convert.ToDecimal(price);
             return sumPricePrescription;
+        }
+
+        public void resetControlDetailPrescription()
+        {
+            sumPricePrescription = 0;
+            nudSumPricePrescription.Value = 0;
+            lbidPrescription.Text = "";
+            dgvDelPrescription.Rows.Clear();
+        }
+
+        public bool isCheckNullFieldDelPrescription(string _idPrescription, object _numberMedicine, object _helpMedicine)
+        {
+            if (_idPrescription == null || _idPrescription == "")
+                return false;
+            else if (_numberMedicine == null)
+                return false;
+            else if (_helpMedicine == null)
+                return false;
+            return true;
         }
 
         #endregion Prescription
@@ -614,6 +634,61 @@ namespace presentation_layer
             dgvDelPrescription.CurrentRow.Cells[1].Value = Convert.ToString(priceMedicine);
         }
 
+        private void btnInsertAllDelPrescription_Click(object sender, EventArgs e)
+        {
+            DialogResult resultCancelUpdate = MessageBox.Show(
+                "The list of techniques has been tested (id Prescription, list medicine, price...) ",
+                "Confirm information",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if (resultCancelUpdate == DialogResult.Yes)
+            {
+                if (dgvDelPrescription.RowCount != 0)
+                {
+                    for (int i = 0; i < dgvDelPrescription.RowCount - 1; i++)
+                    {
+                        if (isCheckNullFieldDelPrescription(
+                            lbidPrescription.Text,
+                            dgvDelPrescription.Rows[i].Cells[2].Value,
+                            dgvDelPrescription.Rows[i].Cells[4].Value))
+                        {
+                            delPrescriptionBUS.insertDelPrescription(
+                                    lbidPrescription.Text,
+                                    dgvDelPrescription.Rows[i].Cells[0].Value.ToString(),
+                                    dgvDelPrescription.Rows[i].Cells[2].Value.ToString(),
+                                    dgvDelPrescription.Rows[i].Cells[4].Value.ToString(),
+                                    dgvDelPrescription.Rows[i].Cells[3].Value.ToString()
+                                    );
+                        }
+                        else
+                        {
+                            MessageBox.Show("List medicine have field is null...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                    }
+
+                    MessageBox.Show("Data list prescription inserted...");
+
+                    prescriptionBUS.updatePrescription(
+                        prescriptionDTO.IdPatient.ToString(),
+                        prescriptionDTO.ConclusionMedical,
+                        nudSumPricePrescription.Value.ToString(),
+                        prescriptionDTO.IdPrescription.ToString()
+                        );
+
+                    resetControlDetailPrescription();
+                    getDatePrescriptionGrid();
+                }
+            }
+            return;
+        }
+
+        private void dgvPrescription_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         #endregion Prescription
 
         #region Medical process
@@ -662,8 +737,11 @@ namespace presentation_layer
 
 
 
+
         #endregion Medical process
 
         #endregion Events
+
+
     }
 }

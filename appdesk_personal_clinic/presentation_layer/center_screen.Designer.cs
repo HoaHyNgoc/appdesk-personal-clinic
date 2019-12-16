@@ -124,6 +124,11 @@
             this.tpPrescription = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.dgvDelPrescription = new System.Windows.Forms.DataGridView();
+            this.ColCbxMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colunitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPriceMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHelpful = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGetPricePrescription = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.nudSumPricePrescription = new System.Windows.Forms.NumericUpDown();
@@ -131,16 +136,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tbxCoulusionPrescription = new System.Windows.Forms.TextBox();
             this.btnInsertPrescription = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -166,11 +161,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ColCbxMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colunitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPriceMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHelpful = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInsertAllDelPrescription = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -203,9 +194,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDelPrescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSumPricePrescription)).BeginInit();
             this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -1154,6 +1142,7 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.btnInsertAllDelPrescription);
             this.groupBox11.Controls.Add(this.dgvDelPrescription);
             this.groupBox11.Controls.Add(this.btnGetPricePrescription);
             this.groupBox11.Controls.Add(this.button6);
@@ -1183,9 +1172,42 @@
             this.dgvDelPrescription.TabIndex = 8;
             this.dgvDelPrescription.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvDelPrescription_EditingControlShowing);
             // 
+            // ColCbxMedicine
+            // 
+            this.ColCbxMedicine.FillWeight = 150F;
+            this.ColCbxMedicine.Frozen = true;
+            this.ColCbxMedicine.HeaderText = "Medicine";
+            this.ColCbxMedicine.Name = "ColCbxMedicine";
+            this.ColCbxMedicine.Width = 150;
+            // 
+            // colunitPrice
+            // 
+            this.colunitPrice.Frozen = true;
+            this.colunitPrice.HeaderText = "Unit Price";
+            this.colunitPrice.Name = "colunitPrice";
+            this.colunitPrice.ReadOnly = true;
+            // 
+            // ColNumber
+            // 
+            this.ColNumber.Frozen = true;
+            this.ColNumber.HeaderText = "Number";
+            this.ColNumber.Name = "ColNumber";
+            // 
+            // ColPriceMedicine
+            // 
+            this.ColPriceMedicine.HeaderText = "SubPrice";
+            this.ColPriceMedicine.Name = "ColPriceMedicine";
+            this.ColPriceMedicine.ReadOnly = true;
+            // 
+            // ColHelpful
+            // 
+            this.ColHelpful.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColHelpful.HeaderText = "Help";
+            this.ColHelpful.Name = "ColHelpful";
+            // 
             // btnGetPricePrescription
             // 
-            this.btnGetPricePrescription.Location = new System.Drawing.Point(590, 22);
+            this.btnGetPricePrescription.Location = new System.Drawing.Point(509, 19);
             this.btnGetPricePrescription.Name = "btnGetPricePrescription";
             this.btnGetPricePrescription.Size = new System.Drawing.Size(75, 23);
             this.btnGetPricePrescription.TabIndex = 6;
@@ -1195,7 +1217,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(671, 22);
+            this.button6.Location = new System.Drawing.Point(590, 19);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 7;
@@ -1244,7 +1266,6 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Controls.Add(this.tbxCoulusionPrescription);
             this.groupBox9.Controls.Add(this.btnInsertPrescription);
             this.groupBox9.Controls.Add(this.label27);
@@ -1259,112 +1280,6 @@
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Technique data";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label37);
-            this.groupBox10.Controls.Add(this.numericUpDown3);
-            this.groupBox10.Controls.Add(this.label36);
-            this.groupBox10.Controls.Add(this.numericUpDown1);
-            this.groupBox10.Controls.Add(this.label31);
-            this.groupBox10.Controls.Add(this.button3);
-            this.groupBox10.Controls.Add(this.button4);
-            this.groupBox10.Controls.Add(this.label32);
-            this.groupBox10.Controls.Add(this.comboBox1);
-            this.groupBox10.Location = new System.Drawing.Point(513, 84);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(80, 17);
-            this.groupBox10.TabIndex = 5;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Medicine";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(165, 56);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(21, 13);
-            this.label37.TabIndex = 2;
-            this.label37.Text = "mg";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Enabled = false;
-            this.numericUpDown3.Location = new System.Drawing.Point(168, 78);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(121, 20);
-            this.numericUpDown3.TabIndex = 7;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(128, 85);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(34, 13);
-            this.label36.TabIndex = 6;
-            this.label36.Text = "Price:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 51);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 20);
-            this.numericUpDown1.TabIndex = 5;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(18, 59);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(47, 13);
-            this.label31.TabIndex = 2;
-            this.label31.Text = "Number:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 121);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = ">>";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(6, 92);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(18, 32);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(53, 13);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "Medicine:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // tbxCoulusionPrescription
             // 
@@ -1464,6 +1379,7 @@
             this.dgvPrescription.Size = new System.Drawing.Size(483, 132);
             this.dgvPrescription.TabIndex = 0;
             this.dgvPrescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrescription_CellClick);
+            this.dgvPrescription.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrescription_CellDoubleClick);
             // 
             // tabControl1
             // 
@@ -1616,38 +1532,15 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // ColCbxMedicine
+            // btnInsertAllDelPrescription
             // 
-            this.ColCbxMedicine.FillWeight = 150F;
-            this.ColCbxMedicine.Frozen = true;
-            this.ColCbxMedicine.HeaderText = "Medicine";
-            this.ColCbxMedicine.Name = "ColCbxMedicine";
-            this.ColCbxMedicine.Width = 150;
-            // 
-            // colunitPrice
-            // 
-            this.colunitPrice.Frozen = true;
-            this.colunitPrice.HeaderText = "Unit Price";
-            this.colunitPrice.Name = "colunitPrice";
-            this.colunitPrice.ReadOnly = true;
-            // 
-            // ColNumber
-            // 
-            this.ColNumber.Frozen = true;
-            this.ColNumber.HeaderText = "Number";
-            this.ColNumber.Name = "ColNumber";
-            // 
-            // ColPriceMedicine
-            // 
-            this.ColPriceMedicine.HeaderText = "SubPrice";
-            this.ColPriceMedicine.Name = "ColPriceMedicine";
-            this.ColPriceMedicine.ReadOnly = true;
-            // 
-            // ColHelpful
-            // 
-            this.ColHelpful.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColHelpful.HeaderText = "Help";
-            this.ColHelpful.Name = "ColHelpful";
+            this.btnInsertAllDelPrescription.Location = new System.Drawing.Point(671, 19);
+            this.btnInsertAllDelPrescription.Name = "btnInsertAllDelPrescription";
+            this.btnInsertAllDelPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertAllDelPrescription.TabIndex = 9;
+            this.btnInsertAllDelPrescription.Text = "Insert";
+            this.btnInsertAllDelPrescription.UseVisualStyleBackColor = true;
+            this.btnInsertAllDelPrescription.Click += new System.EventHandler(this.btnInsertAllDelPrescription_Click);
             // 
             // center_screen
             // 
@@ -1708,10 +1601,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSumPricePrescription)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).EndInit();
@@ -1850,13 +1739,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DataGridView dgvPrescription;
         private System.Windows.Forms.TextBox tbxCoulusionPrescription;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Button btnGetPricePrescription;
         private System.Windows.Forms.Button button6;
@@ -1864,14 +1746,12 @@
         private System.Windows.Forms.Label lbidPrescription;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.DataGridView dgvDelPrescription;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColCbxMedicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPriceMedicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHelpful;
+        private System.Windows.Forms.Button btnInsertAllDelPrescription;
     }
 }
