@@ -65,6 +65,11 @@ namespace business_logic_layer
             return delPrescriptionDal.insertCoreDetailPrescription(currentDelPrescriptionDatarow);
         }
 
+        public int deleteDelPrescription(string selectedIdDetailPrescription)
+        {
+            return delPrescriptionDal.deleteCoreDetailPrescription(Convert.ToInt32(selectedIdDetailPrescription));
+        }
+
         #endregion Logical CRUD Methods
     }
 }

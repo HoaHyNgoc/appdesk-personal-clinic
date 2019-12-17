@@ -53,6 +53,12 @@ namespace database_access_layer
             return flagInsert;
         }
 
+        public int deleteCoreDetailPrescription(int _idDelPrescription)
+        {
+            int flagInsert = new DETAIL_PRESCRIPTIONTableAdapter().deleteDelPrescriptionQuery(_idDelPrescription);
+            return flagInsert;
+        }
+
         #endregion CRUD Methods
     }
 }

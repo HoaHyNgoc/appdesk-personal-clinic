@@ -29,32 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbidPrescription = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
+            this.btnCancelUpdatePrescription = new System.Windows.Forms.Button();
             this.tbxCoulusionPrescription = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.tbxidPatientPrescription = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lbidPrescription = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateAllDelPrescription = new System.Windows.Forms.Button();
             this.nudSumPricePrescription = new System.Windows.Forms.NumericUpDown();
             this.label35 = new System.Windows.Forms.Label();
-            this.btnUpdateAllDelPrescription = new System.Windows.Forms.Button();
             this.dgvDelPrescription = new System.Windows.Forms.DataGridView();
-            this.ColCbxMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colunitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPriceMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHelpful = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGetPricePrescription = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.tbxidPatientPrescription = new System.Windows.Forms.TextBox();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
             this.dgvBackup = new System.Windows.Forms.DataGridView();
-            this.btnCancelUpdatePrescription = new System.Windows.Forms.Button();
-            this.btnUpdatePrescription = new System.Windows.Forms.Button();
             this.cbxBackMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.backUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backSubPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backHelp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDelPrescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCbxMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colunitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPriceMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHelpful = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddRow = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSumPricePrescription)).BeginInit();
@@ -64,8 +65,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnUpdateAllDelPrescription);
             this.groupBox3.Controls.Add(this.btnCancelUpdatePrescription);
-            this.groupBox3.Controls.Add(this.btnUpdatePrescription);
             this.groupBox3.Controls.Add(this.tbxCoulusionPrescription);
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.label34);
@@ -78,40 +79,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Information update";
             // 
-            // lbidPrescription
+            // btnCancelUpdatePrescription
             // 
-            this.lbidPrescription.AutoSize = true;
-            this.lbidPrescription.Location = new System.Drawing.Point(97, 27);
-            this.lbidPrescription.Name = "lbidPrescription";
-            this.lbidPrescription.Size = new System.Drawing.Size(31, 13);
-            this.lbidPrescription.TabIndex = 6;
-            this.lbidPrescription.Text = "5000";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.btnUpdateAllDelPrescription);
-            this.groupBox6.Controls.Add(this.nudSumPricePrescription);
-            this.groupBox6.Controls.Add(this.label35);
-            this.groupBox6.Controls.Add(this.dgvDelPrescription);
-            this.groupBox6.Controls.Add(this.btnGetPricePrescription);
-            this.groupBox6.Controls.Add(this.tbxidPatientPrescription);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.label30);
-            this.groupBox6.Location = new System.Drawing.Point(7, 55);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(776, 164);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "List medicine reviews";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(14, 27);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(77, 13);
-            this.label34.TabIndex = 7;
-            this.label34.Text = "Id Prescription:";
+            this.btnCancelUpdatePrescription.Location = new System.Drawing.Point(693, 276);
+            this.btnCancelUpdatePrescription.Name = "btnCancelUpdatePrescription";
+            this.btnCancelUpdatePrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelUpdatePrescription.TabIndex = 12;
+            this.btnCancelUpdatePrescription.Text = "Cancel";
+            this.btnCancelUpdatePrescription.UseVisualStyleBackColor = true;
+            this.btnCancelUpdatePrescription.Click += new System.EventHandler(this.btnCancelUpdatePrescription_Click);
             // 
             // tbxCoulusionPrescription
             // 
@@ -129,22 +105,50 @@
             this.label28.TabIndex = 8;
             this.label28.Text = "Conclusion:";
             // 
-            // tbxidPatientPrescription
+            // label34
             // 
-            this.tbxidPatientPrescription.Enabled = false;
-            this.tbxidPatientPrescription.Location = new System.Drawing.Point(64, 19);
-            this.tbxidPatientPrescription.Name = "tbxidPatientPrescription";
-            this.tbxidPatientPrescription.Size = new System.Drawing.Size(97, 20);
-            this.tbxidPatientPrescription.TabIndex = 9;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(14, 27);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 13);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "Id Prescription:";
             // 
-            // label30
+            // lbidPrescription
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 26);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 13);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Id Patient:";
+            this.lbidPrescription.AutoSize = true;
+            this.lbidPrescription.Location = new System.Drawing.Point(97, 27);
+            this.lbidPrescription.Name = "lbidPrescription";
+            this.lbidPrescription.Size = new System.Drawing.Size(31, 13);
+            this.lbidPrescription.TabIndex = 6;
+            this.lbidPrescription.Text = "5000";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnAddRow);
+            this.groupBox6.Controls.Add(this.nudSumPricePrescription);
+            this.groupBox6.Controls.Add(this.label35);
+            this.groupBox6.Controls.Add(this.dgvDelPrescription);
+            this.groupBox6.Controls.Add(this.btnGetPricePrescription);
+            this.groupBox6.Controls.Add(this.tbxidPatientPrescription);
+            this.groupBox6.Controls.Add(this.btnDeleteRow);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Location = new System.Drawing.Point(7, 55);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(776, 164);
+            this.groupBox6.TabIndex = 3;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "List medicine reviews";
+            // 
+            // btnUpdateAllDelPrescription
+            // 
+            this.btnUpdateAllDelPrescription.Location = new System.Drawing.Point(612, 276);
+            this.btnUpdateAllDelPrescription.Name = "btnUpdateAllDelPrescription";
+            this.btnUpdateAllDelPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateAllDelPrescription.TabIndex = 9;
+            this.btnUpdateAllDelPrescription.Text = "Update";
+            this.btnUpdateAllDelPrescription.UseVisualStyleBackColor = true;
+            this.btnUpdateAllDelPrescription.Click += new System.EventHandler(this.btnUpdateAllDelPrescription_Click);
             // 
             // nudSumPricePrescription
             // 
@@ -168,19 +172,11 @@
             this.label35.TabIndex = 7;
             this.label35.Text = "Price technique:";
             // 
-            // btnUpdateAllDelPrescription
-            // 
-            this.btnUpdateAllDelPrescription.Location = new System.Drawing.Point(686, 22);
-            this.btnUpdateAllDelPrescription.Name = "btnUpdateAllDelPrescription";
-            this.btnUpdateAllDelPrescription.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateAllDelPrescription.TabIndex = 9;
-            this.btnUpdateAllDelPrescription.Text = "Update";
-            this.btnUpdateAllDelPrescription.UseVisualStyleBackColor = true;
-            // 
             // dgvDelPrescription
             // 
             this.dgvDelPrescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDelPrescription.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDelPrescription,
             this.ColCbxMedicine,
             this.colunitPrice,
             this.ColNumber,
@@ -190,57 +186,44 @@
             this.dgvDelPrescription.Name = "dgvDelPrescription";
             this.dgvDelPrescription.Size = new System.Drawing.Size(743, 93);
             this.dgvDelPrescription.TabIndex = 8;
-            // 
-            // ColCbxMedicine
-            // 
-            this.ColCbxMedicine.FillWeight = 150F;
-            this.ColCbxMedicine.Frozen = true;
-            this.ColCbxMedicine.HeaderText = "Medicine";
-            this.ColCbxMedicine.Name = "ColCbxMedicine";
-            this.ColCbxMedicine.Width = 150;
-            // 
-            // colunitPrice
-            // 
-            this.colunitPrice.Frozen = true;
-            this.colunitPrice.HeaderText = "Unit Price";
-            this.colunitPrice.Name = "colunitPrice";
-            this.colunitPrice.ReadOnly = true;
-            // 
-            // ColNumber
-            // 
-            this.ColNumber.Frozen = true;
-            this.ColNumber.HeaderText = "Number";
-            this.ColNumber.Name = "ColNumber";
-            // 
-            // ColPriceMedicine
-            // 
-            this.ColPriceMedicine.HeaderText = "SubPrice";
-            this.ColPriceMedicine.Name = "ColPriceMedicine";
-            this.ColPriceMedicine.ReadOnly = true;
-            // 
-            // ColHelpful
-            // 
-            this.ColHelpful.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColHelpful.HeaderText = "Help";
-            this.ColHelpful.Name = "ColHelpful";
+            this.dgvDelPrescription.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvDelPrescription_EditingControlShowing);
             // 
             // btnGetPricePrescription
             // 
-            this.btnGetPricePrescription.Location = new System.Drawing.Point(524, 22);
+            this.btnGetPricePrescription.Location = new System.Drawing.Point(511, 25);
             this.btnGetPricePrescription.Name = "btnGetPricePrescription";
             this.btnGetPricePrescription.Size = new System.Drawing.Size(75, 23);
             this.btnGetPricePrescription.TabIndex = 6;
             this.btnGetPricePrescription.Text = "Get price";
             this.btnGetPricePrescription.UseVisualStyleBackColor = true;
+            this.btnGetPricePrescription.Click += new System.EventHandler(this.btnGetPricePrescription_Click);
             // 
-            // button6
+            // tbxidPatientPrescription
             // 
-            this.button6.Location = new System.Drawing.Point(605, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Reset";
-            this.button6.UseVisualStyleBackColor = true;
+            this.tbxidPatientPrescription.Enabled = false;
+            this.tbxidPatientPrescription.Location = new System.Drawing.Point(64, 19);
+            this.tbxidPatientPrescription.Name = "tbxidPatientPrescription";
+            this.tbxidPatientPrescription.Size = new System.Drawing.Size(97, 20);
+            this.tbxidPatientPrescription.TabIndex = 9;
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.Location = new System.Drawing.Point(592, 25);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteRow.TabIndex = 7;
+            this.btnDeleteRow.Text = "Delete";
+            this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 26);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Id Patient:";
             // 
             // dgvBackup
             // 
@@ -255,24 +238,6 @@
             this.dgvBackup.Name = "dgvBackup";
             this.dgvBackup.Size = new System.Drawing.Size(743, 93);
             this.dgvBackup.TabIndex = 9;
-            // 
-            // btnCancelUpdatePrescription
-            // 
-            this.btnCancelUpdatePrescription.Location = new System.Drawing.Point(693, 276);
-            this.btnCancelUpdatePrescription.Name = "btnCancelUpdatePrescription";
-            this.btnCancelUpdatePrescription.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelUpdatePrescription.TabIndex = 12;
-            this.btnCancelUpdatePrescription.Text = "Cancel";
-            this.btnCancelUpdatePrescription.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdatePrescription
-            // 
-            this.btnUpdatePrescription.Location = new System.Drawing.Point(612, 276);
-            this.btnUpdatePrescription.Name = "btnUpdatePrescription";
-            this.btnUpdatePrescription.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdatePrescription.TabIndex = 11;
-            this.btnUpdatePrescription.Text = "Update";
-            this.btnUpdatePrescription.UseVisualStyleBackColor = true;
             // 
             // cbxBackMedicine
             // 
@@ -306,6 +271,58 @@
             this.backHelp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.backHelp.HeaderText = "Help";
             this.backHelp.Name = "backHelp";
+            // 
+            // idDelPrescription
+            // 
+            this.idDelPrescription.Frozen = true;
+            this.idDelPrescription.HeaderText = "id";
+            this.idDelPrescription.Name = "idDelPrescription";
+            this.idDelPrescription.ReadOnly = true;
+            this.idDelPrescription.Width = 60;
+            // 
+            // ColCbxMedicine
+            // 
+            this.ColCbxMedicine.FillWeight = 150F;
+            this.ColCbxMedicine.Frozen = true;
+            this.ColCbxMedicine.HeaderText = "Medicine";
+            this.ColCbxMedicine.Name = "ColCbxMedicine";
+            this.ColCbxMedicine.Width = 150;
+            // 
+            // colunitPrice
+            // 
+            this.colunitPrice.Frozen = true;
+            this.colunitPrice.HeaderText = "Unit Price";
+            this.colunitPrice.Name = "colunitPrice";
+            this.colunitPrice.ReadOnly = true;
+            // 
+            // ColNumber
+            // 
+            this.ColNumber.Frozen = true;
+            this.ColNumber.HeaderText = "Number";
+            this.ColNumber.Name = "ColNumber";
+            this.ColNumber.Width = 50;
+            // 
+            // ColPriceMedicine
+            // 
+            this.ColPriceMedicine.HeaderText = "SubPrice";
+            this.ColPriceMedicine.Name = "ColPriceMedicine";
+            this.ColPriceMedicine.ReadOnly = true;
+            // 
+            // ColHelpful
+            // 
+            this.ColHelpful.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColHelpful.HeaderText = "Help";
+            this.ColHelpful.Name = "ColHelpful";
+            // 
+            // btnAddRow
+            // 
+            this.btnAddRow.Location = new System.Drawing.Point(673, 25);
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.Size = new System.Drawing.Size(75, 23);
+            this.btnAddRow.TabIndex = 11;
+            this.btnAddRow.Text = "Add row";
+            this.btnAddRow.UseVisualStyleBackColor = true;
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
             // 
             // update_prescription_ui
             // 
@@ -342,20 +359,21 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Button btnUpdateAllDelPrescription;
         private System.Windows.Forms.DataGridView dgvDelPrescription;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColCbxMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPriceMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColHelpful;
         private System.Windows.Forms.Button btnGetPricePrescription;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDeleteRow;
         private System.Windows.Forms.DataGridView dgvBackup;
         private System.Windows.Forms.Button btnCancelUpdatePrescription;
-        private System.Windows.Forms.Button btnUpdatePrescription;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbxBackMedicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn backUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn backNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn backSubPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn backHelp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDelPrescription;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColCbxMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPriceMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColHelpful;
+        private System.Windows.Forms.Button btnAddRow;
     }
 }
