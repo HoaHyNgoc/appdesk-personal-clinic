@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +82,12 @@
     <Compile Include="center_custom_ui\medical_ui\update_medical_screen.Designer.cs">
       <DependentUpon>update_medical_screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="center_custom_ui\patient_ui\export_patient_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="center_custom_ui\patient_ui\export_patient_screen.Designer.cs">
+      <DependentUpon>export_patient_screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="center_custom_ui\patient_ui\update_patient_screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +112,11 @@
     <Compile Include="center_screen.Designer.cs">
       <DependentUpon>center_screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBPersonalClinicDataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPersonalClinicDataSetReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="screen_debug_data.cs">
@@ -108,6 +131,7 @@
     <Compile Include="search_screen.Designer.cs">
       <DependentUpon>search_screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="admin_root_ui\rest_ui\medicine_ui\create_medicin_screen.resx">
       <DependentUpon>create_medicin_screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="center_custom_ui\medical_ui\update_medical_screen.resx">
       <DependentUpon>update_medical_screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="center_custom_ui\patient_ui\export_patient_screen.resx">
+      <DependentUpon>export_patient_screen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="center_custom_ui\patient_ui\update_patient_screen.resx">
       <DependentUpon>update_patient_screen.cs</DependentUpon>
@@ -141,12 +168,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reportPatient.rdlc" />
     <EmbeddedResource Include="screen_debug_data.resx">
       <DependentUpon>screen_debug_data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="search_screen.resx">
       <DependentUpon>search_screen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBPersonalClinicDataSetReport.xsc">
+      <DependentUpon>DBPersonalClinicDataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="DBPersonalClinicDataSetReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBPersonalClinicDataSetReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBPersonalClinicDataSetReport.xss">
+      <DependentUpon>DBPersonalClinicDataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -178,6 +218,21 @@
     <Folder Include="admin_root_ui\report_ui\" />
     <Folder Include="admin_root_ui\rest_ui\actors_ui\" />
     <Folder Include="admin_root_ui\rest_ui\specialists_ui\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

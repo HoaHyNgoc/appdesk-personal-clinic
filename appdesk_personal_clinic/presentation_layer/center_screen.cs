@@ -374,6 +374,12 @@ namespace presentation_layer
             dgvPatient.DataSource = tablePatientSearch;
         }
 
+        private void btnExportPatient_Click(object sender, EventArgs e)
+        {
+            Form frmExportPatient = new export_patient_screen();
+            frmExportPatient.ShowDialog();
+        }
+
         #endregion Patient
 
         #region Medical record
@@ -730,6 +736,7 @@ namespace presentation_layer
             tabControlMain.SelectedTab = tpPrescription;
             setStateMedicalProcess(lbStateMedicalProcess04.Name);
         }
+
 
 
 

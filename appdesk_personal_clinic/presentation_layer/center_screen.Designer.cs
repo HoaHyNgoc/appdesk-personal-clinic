@@ -123,6 +123,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.tpPrescription = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnInsertAllDelPrescription = new System.Windows.Forms.Button();
             this.dgvDelPrescription = new System.Windows.Forms.DataGridView();
             this.ColCbxMedicine = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colunitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,7 +162,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnInsertAllDelPrescription = new System.Windows.Forms.Button();
+            this.btnExportPatient = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -390,6 +391,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnExportPatient);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.panel5);
             this.groupBox5.Controls.Add(this.panel4);
@@ -1157,6 +1159,16 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "List medicine reviews";
             // 
+            // btnInsertAllDelPrescription
+            // 
+            this.btnInsertAllDelPrescription.Location = new System.Drawing.Point(671, 19);
+            this.btnInsertAllDelPrescription.Name = "btnInsertAllDelPrescription";
+            this.btnInsertAllDelPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertAllDelPrescription.TabIndex = 9;
+            this.btnInsertAllDelPrescription.Text = "Insert";
+            this.btnInsertAllDelPrescription.UseVisualStyleBackColor = true;
+            this.btnInsertAllDelPrescription.Click += new System.EventHandler(this.btnInsertAllDelPrescription_Click);
+            // 
             // dgvDelPrescription
             // 
             this.dgvDelPrescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1532,15 +1544,15 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnInsertAllDelPrescription
+            // btnExportPatient
             // 
-            this.btnInsertAllDelPrescription.Location = new System.Drawing.Point(671, 19);
-            this.btnInsertAllDelPrescription.Name = "btnInsertAllDelPrescription";
-            this.btnInsertAllDelPrescription.Size = new System.Drawing.Size(75, 23);
-            this.btnInsertAllDelPrescription.TabIndex = 9;
-            this.btnInsertAllDelPrescription.Text = "Insert";
-            this.btnInsertAllDelPrescription.UseVisualStyleBackColor = true;
-            this.btnInsertAllDelPrescription.Click += new System.EventHandler(this.btnInsertAllDelPrescription_Click);
+            this.btnExportPatient.Location = new System.Drawing.Point(10, 100);
+            this.btnExportPatient.Name = "btnExportPatient";
+            this.btnExportPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnExportPatient.TabIndex = 4;
+            this.btnExportPatient.Text = "Export";
+            this.btnExportPatient.UseVisualStyleBackColor = true;
+            this.btnExportPatient.Click += new System.EventHandler(this.btnExportPatient_Click);
             // 
             // center_screen
             // 
@@ -1753,5 +1765,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPriceMedicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHelpful;
         private System.Windows.Forms.Button btnInsertAllDelPrescription;
+        private System.Windows.Forms.Button btnExportPatient;
     }
 }
