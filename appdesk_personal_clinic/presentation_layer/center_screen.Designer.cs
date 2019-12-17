@@ -48,6 +48,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnExportPatient = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbStatusPatient = new System.Windows.Forms.Label();
@@ -148,6 +149,12 @@
             this.tbxidPatientPrescription = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.dgvPrescription = new System.Windows.Forms.DataGridView();
+            this.tbReportSale = new System.Windows.Forms.TabPage();
+            this.btnCreateReportPrescription = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.dtpTimePrescription = new System.Windows.Forms.DateTimePicker();
+            this.rvPrescription = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tbBill = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lbStateMedicalProcess04 = new System.Windows.Forms.Label();
@@ -162,7 +169,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnExportPatient = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -197,6 +203,7 @@
             this.groupBox9.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).BeginInit();
+            this.tbReportSale.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptPatient)).BeginInit();
@@ -214,6 +221,8 @@
             this.tabControlMain.Controls.Add(this.tpMedicalRecord);
             this.tabControlMain.Controls.Add(this.tpTechnical);
             this.tabControlMain.Controls.Add(this.tpPrescription);
+            this.tabControlMain.Controls.Add(this.tbReportSale);
+            this.tabControlMain.Controls.Add(this.tbBill);
             this.tabControlMain.Location = new System.Drawing.Point(12, 108);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -402,6 +411,16 @@
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Information patient";
+            // 
+            // btnExportPatient
+            // 
+            this.btnExportPatient.Location = new System.Drawing.Point(10, 100);
+            this.btnExportPatient.Name = "btnExportPatient";
+            this.btnExportPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnExportPatient.TabIndex = 4;
+            this.btnExportPatient.Text = "Export";
+            this.btnExportPatient.UseVisualStyleBackColor = true;
+            this.btnExportPatient.Click += new System.EventHandler(this.btnExportPatient_Click);
             // 
             // label11
             // 
@@ -1393,6 +1412,64 @@
             this.dgvPrescription.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrescription_CellClick);
             this.dgvPrescription.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrescription_CellDoubleClick);
             // 
+            // tbReportSale
+            // 
+            this.tbReportSale.Controls.Add(this.btnCreateReportPrescription);
+            this.tbReportSale.Controls.Add(this.label31);
+            this.tbReportSale.Controls.Add(this.dtpTimePrescription);
+            this.tbReportSale.Controls.Add(this.rvPrescription);
+            this.tbReportSale.Location = new System.Drawing.Point(4, 22);
+            this.tbReportSale.Name = "tbReportSale";
+            this.tbReportSale.Padding = new System.Windows.Forms.Padding(3);
+            this.tbReportSale.Size = new System.Drawing.Size(764, 354);
+            this.tbReportSale.TabIndex = 4;
+            this.tbReportSale.Text = "ReportPrice";
+            this.tbReportSale.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateReportPrescription
+            // 
+            this.btnCreateReportPrescription.Location = new System.Drawing.Point(683, 12);
+            this.btnCreateReportPrescription.Name = "btnCreateReportPrescription";
+            this.btnCreateReportPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateReportPrescription.TabIndex = 3;
+            this.btnCreateReportPrescription.Text = "Confirm";
+            this.btnCreateReportPrescription.UseVisualStyleBackColor = true;
+            this.btnCreateReportPrescription.Click += new System.EventHandler(this.btnCreateReportPrescription_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(415, 20);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 13);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Time Line:";
+            // 
+            // dtpTimePrescription
+            // 
+            this.dtpTimePrescription.Location = new System.Drawing.Point(477, 14);
+            this.dtpTimePrescription.Name = "dtpTimePrescription";
+            this.dtpTimePrescription.Size = new System.Drawing.Size(200, 20);
+            this.dtpTimePrescription.TabIndex = 1;
+            // 
+            // rvPrescription
+            // 
+            this.rvPrescription.Location = new System.Drawing.Point(6, 41);
+            this.rvPrescription.Name = "rvPrescription";
+            this.rvPrescription.ServerReport.BearerToken = null;
+            this.rvPrescription.Size = new System.Drawing.Size(752, 307);
+            this.rvPrescription.TabIndex = 0;
+            // 
+            // tbBill
+            // 
+            this.tbBill.Location = new System.Drawing.Point(4, 22);
+            this.tbBill.Name = "tbBill";
+            this.tbBill.Padding = new System.Windows.Forms.Padding(3);
+            this.tbBill.Size = new System.Drawing.Size(764, 354);
+            this.tbBill.TabIndex = 5;
+            this.tbBill.Text = "Bill";
+            this.tbBill.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -1544,16 +1621,6 @@
             this.tabPage3.Text = "Report documents";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnExportPatient
-            // 
-            this.btnExportPatient.Location = new System.Drawing.Point(10, 100);
-            this.btnExportPatient.Name = "btnExportPatient";
-            this.btnExportPatient.Size = new System.Drawing.Size(75, 23);
-            this.btnExportPatient.TabIndex = 4;
-            this.btnExportPatient.Text = "Export";
-            this.btnExportPatient.UseVisualStyleBackColor = true;
-            this.btnExportPatient.Click += new System.EventHandler(this.btnExportPatient_Click);
-            // 
             // center_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1616,6 +1683,8 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).EndInit();
+            this.tbReportSale.ResumeLayout(false);
+            this.tbReportSale.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1766,5 +1835,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHelpful;
         private System.Windows.Forms.Button btnInsertAllDelPrescription;
         private System.Windows.Forms.Button btnExportPatient;
+        private System.Windows.Forms.TabPage tbReportSale;
+        private Microsoft.Reporting.WinForms.ReportViewer rvPrescription;
+        private System.Windows.Forms.DateTimePicker dtpTimePrescription;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnCreateReportPrescription;
+        private System.Windows.Forms.TabPage tbBill;
     }
 }

@@ -204,6 +204,7 @@ namespace presentation_layer.center_custom_ui.prescription_ui
                         prescriptionState.IdPatient.ToString(),
                         tbxCoulusionPrescription.Text,
                         nudSumPricePrescription.Value.ToString(),
+                        DateTime.Now.ToString("yyyy-MM-dd"),
                         prescriptionState.IdPrescription.ToString()
                         );
 

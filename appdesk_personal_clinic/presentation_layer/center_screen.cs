@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 #region Import Screen
 
@@ -20,6 +21,7 @@ using presentation_layer.center_custom_ui.prescription_ui;
 using business_logic_layer;
 using database_access_layer;
 using data_transfer_object;
+using presentation_layer.DBPersonalClinicDataSetReportTableAdapters;
 
 namespace presentation_layer
 {
@@ -324,6 +326,7 @@ namespace presentation_layer
         private void center_screen_Load(object sender, EventArgs e)
         {
             loadSingletonDataObject();
+            this.rvPrescription.RefreshReport();
         }
 
         #region Patient
@@ -563,7 +566,8 @@ namespace presentation_layer
             prescriptionBUS.insertPrescription(
                 tbxidPatientPrescription.Text,
                 tbxCoulusionPrescription.Text,
-                "0"
+                "0",
+                DateTime.Now.ToString("yyyy-MM-dd")
                 );
             MessageBox.Show("Data prescription inserted...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
             clearDataFieldPrescription();
@@ -681,6 +685,7 @@ namespace presentation_layer
                         prescriptionDTO.IdPatient.ToString(),
                         prescriptionDTO.ConclusionMedical,
                         nudSumPricePrescription.Value.ToString(),
+                        DateTime.Now.ToString("yyyy-MM-dd"),
                         prescriptionDTO.IdPrescription.ToString()
                         );
 
@@ -748,10 +753,32 @@ namespace presentation_layer
 
 
 
+
         #endregion Medical process
 
-        #endregion Events
+        #region Reports
 
+        private void btnCreateReportPrescription_Click(object sender, EventArgs e)
+        {
+            DBPersonalClinicDataSetReport.PRESCRIPTIONDataTable tblPre = new PRESCRIPTIONTableAdapter().GetDataByTime(dtpTimePrescription.Value.Month);
+            rvPrescription.ProcessingMode = ProcessingMode.Local;
+            rvPrescription.LocalReport.ReportPath = "D:\\repository\\appdesk-personal-clinic\\appdesk_personal_clinic\\presentation_layer\\reportPrescription.rdlc";
+
+            if (tblPre.Rows.Count > 0)
+            {
+                ReportDataSource reportDataSource1 = new ReportDataSource();
+                reportDataSource1.Name = "DataSetPrescriptionRP";
+                reportDataSource1.Value = tblPre;
+
+                rvPrescription.LocalReport.DataSources.Clear();
+                rvPrescription.LocalReport.DataSources.Add(reportDataSource1);
+                rvPrescription.RefreshReport();
+            }
+        }
+
+        #endregion Reports
+
+        #endregion Events
 
     }
 }

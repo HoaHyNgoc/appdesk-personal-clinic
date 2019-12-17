@@ -53,7 +53,7 @@
     <Compile Include="PersonalClinicDataSet.cs">
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PersonalClinicDataSet.Designer.cs">
+    <Compile Include="PersonalClinicDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
@@ -76,8 +76,8 @@
     </None>
     <None Include="PersonalClinicDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PersonalClinicDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>PersonalClinicDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="PersonalClinicDataSet.xss">
       <DependentUpon>PersonalClinicDataSet.xsd</DependentUpon>
