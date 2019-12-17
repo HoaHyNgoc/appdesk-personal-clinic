@@ -32,6 +32,7 @@ namespace database_access_layer
                 originalPrescription.IdPatient,
                 originalPrescription.ConclusionMedical,
                 originalPrescription.Price,
+                originalPrescription.DayTime,
                 originalPrescription.IdPrescription
                 );
 
@@ -43,7 +44,8 @@ namespace database_access_layer
             int flagInsert = new PRESCRIPTIONTableAdapter().insertPrescriptionQuery(
                 newPrescription.IdPatient,
                 newPrescription.ConclusionMedical,
-                newPrescription.Price
+                newPrescription.Price,
+                newPrescription.DayTime
                 );
 
             return flagInsert;

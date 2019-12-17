@@ -169,6 +169,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="reportPatient.rdlc" />
+    <EmbeddedResource Include="reportPrescription.rdlc" />
     <EmbeddedResource Include="screen_debug_data.resx">
       <DependentUpon>screen_debug_data.cs</DependentUpon>
     </EmbeddedResource>

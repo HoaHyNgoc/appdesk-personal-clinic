@@ -35,6 +35,7 @@ namespace business_logic_layer
             string idPatient,
             string conclusionMedical,
             string price,
+            string xtime,
             string originalIdPrescription)
         {
 
@@ -43,6 +44,7 @@ namespace business_logic_layer
             currentPrescriptionDatarow.ConclusionMedical = Convert.ToString(conclusionMedical);
             currentPrescriptionDatarow.Price = Convert.ToDecimal(price);
             currentPrescriptionDatarow.IdPrescription = Convert.ToInt32(originalIdPrescription);
+            currentPrescriptionDatarow.DayTime = Convert.ToDateTime(xtime);
 
             return prescriptionDal.updateCorePrescription(currentPrescriptionDatarow);
         }
@@ -50,13 +52,15 @@ namespace business_logic_layer
         public int insertPrescription(
             string idPatient,
             string conclusionMedical,
-            string price)
+            string price,
+            string xtime)
         {
 
             PrescriptionDTO currentPrescriptionDatarow = new PrescriptionDTO();
             currentPrescriptionDatarow.IdPatient = Convert.ToInt32(idPatient);
             currentPrescriptionDatarow.ConclusionMedical = Convert.ToString(conclusionMedical);
             currentPrescriptionDatarow.Price = Convert.ToDecimal(price);
+            currentPrescriptionDatarow.DayTime = Convert.ToDateTime(xtime);
 
             return prescriptionDal.insertCorePrescription(currentPrescriptionDatarow);
         }
