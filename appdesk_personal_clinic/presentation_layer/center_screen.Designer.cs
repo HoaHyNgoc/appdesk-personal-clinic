@@ -159,6 +159,12 @@
             this.btnCreateReportTechnique = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.dtpReportTechnique = new System.Windows.Forms.DateTimePicker();
+            this.tpPayPrescription = new System.Windows.Forms.TabPage();
+            this.rvPayPrescription = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnGetPayPrescription = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.tbxidPayPrescription = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControlCenter = new System.Windows.Forms.TabControl();
             this.tabPageMedical = new System.Windows.Forms.TabPage();
             this.lbStateMedicalProcess04 = new System.Windows.Forms.Label();
@@ -169,8 +175,10 @@
             this.ptPrescription = new System.Windows.Forms.PictureBox();
             this.ptTechnique = new System.Windows.Forms.PictureBox();
             this.ptMedicalRecord = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.tabPagePay = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.ptPayPrescription = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.lbReportDocument2 = new System.Windows.Forms.Label();
@@ -213,14 +221,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescription)).BeginInit();
             this.tbReportSale.SuspendLayout();
             this.tbReportTechnique.SuspendLayout();
+            this.tpPayPrescription.SuspendLayout();
             this.tabControlCenter.SuspendLayout();
             this.tabPageMedical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabPagePay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptPayPrescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPageReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptReportPrescription)).BeginInit();
@@ -235,6 +244,8 @@
             this.tabControlMain.Controls.Add(this.tpPrescription);
             this.tabControlMain.Controls.Add(this.tbReportSale);
             this.tabControlMain.Controls.Add(this.tbReportTechnique);
+            this.tabControlMain.Controls.Add(this.tpPayPrescription);
+            this.tabControlMain.Controls.Add(this.tabPage3);
             this.tabControlMain.Location = new System.Drawing.Point(12, 108);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -624,7 +635,7 @@
             this.tpMedicalRecord.Location = new System.Drawing.Point(4, 22);
             this.tpMedicalRecord.Name = "tpMedicalRecord";
             this.tpMedicalRecord.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMedicalRecord.Size = new System.Drawing.Size(764, 354);
+            this.tpMedicalRecord.Size = new System.Drawing.Size(764, 358);
             this.tpMedicalRecord.TabIndex = 1;
             this.tpMedicalRecord.Text = "Medical record";
             this.tpMedicalRecord.UseVisualStyleBackColor = true;
@@ -864,7 +875,7 @@
             this.tpTechnical.Location = new System.Drawing.Point(4, 22);
             this.tpTechnical.Name = "tpTechnical";
             this.tpTechnical.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTechnical.Size = new System.Drawing.Size(764, 354);
+            this.tpTechnical.Size = new System.Drawing.Size(764, 358);
             this.tpTechnical.TabIndex = 2;
             this.tpTechnical.Text = "Technique";
             this.tpTechnical.UseVisualStyleBackColor = true;
@@ -1168,7 +1179,7 @@
             this.tpPrescription.Location = new System.Drawing.Point(4, 22);
             this.tpPrescription.Name = "tpPrescription";
             this.tpPrescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrescription.Size = new System.Drawing.Size(764, 354);
+            this.tpPrescription.Size = new System.Drawing.Size(764, 358);
             this.tpPrescription.TabIndex = 3;
             this.tpPrescription.Text = "Prescription";
             this.tpPrescription.UseVisualStyleBackColor = true;
@@ -1433,7 +1444,7 @@
             this.tbReportSale.Location = new System.Drawing.Point(4, 22);
             this.tbReportSale.Name = "tbReportSale";
             this.tbReportSale.Padding = new System.Windows.Forms.Padding(3);
-            this.tbReportSale.Size = new System.Drawing.Size(764, 354);
+            this.tbReportSale.Size = new System.Drawing.Size(764, 358);
             this.tbReportSale.TabIndex = 4;
             this.tbReportSale.Text = "ReportPrice";
             this.tbReportSale.UseVisualStyleBackColor = true;
@@ -1481,7 +1492,7 @@
             this.tbReportTechnique.Location = new System.Drawing.Point(4, 22);
             this.tbReportTechnique.Name = "tbReportTechnique";
             this.tbReportTechnique.Padding = new System.Windows.Forms.Padding(3);
-            this.tbReportTechnique.Size = new System.Drawing.Size(764, 354);
+            this.tbReportTechnique.Size = new System.Drawing.Size(764, 358);
             this.tbReportTechnique.TabIndex = 5;
             this.tbReportTechnique.Text = "ReportTechnique";
             this.tbReportTechnique.UseVisualStyleBackColor = true;
@@ -1520,10 +1531,68 @@
             this.dtpReportTechnique.Size = new System.Drawing.Size(200, 20);
             this.dtpReportTechnique.TabIndex = 4;
             // 
+            // tpPayPrescription
+            // 
+            this.tpPayPrescription.Controls.Add(this.rvPayPrescription);
+            this.tpPayPrescription.Controls.Add(this.btnGetPayPrescription);
+            this.tpPayPrescription.Controls.Add(this.label37);
+            this.tpPayPrescription.Controls.Add(this.tbxidPayPrescription);
+            this.tpPayPrescription.Location = new System.Drawing.Point(4, 22);
+            this.tpPayPrescription.Name = "tpPayPrescription";
+            this.tpPayPrescription.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPayPrescription.Size = new System.Drawing.Size(764, 358);
+            this.tpPayPrescription.TabIndex = 6;
+            this.tpPayPrescription.Text = "Pay Prescription";
+            this.tpPayPrescription.UseVisualStyleBackColor = true;
+            // 
+            // rvPayPrescription
+            // 
+            this.rvPayPrescription.Location = new System.Drawing.Point(6, 33);
+            this.rvPayPrescription.Name = "rvPayPrescription";
+            this.rvPayPrescription.ServerReport.BearerToken = null;
+            this.rvPayPrescription.Size = new System.Drawing.Size(752, 315);
+            this.rvPayPrescription.TabIndex = 6;
+            // 
+            // btnGetPayPrescription
+            // 
+            this.btnGetPayPrescription.Location = new System.Drawing.Point(683, 4);
+            this.btnGetPayPrescription.Name = "btnGetPayPrescription";
+            this.btnGetPayPrescription.Size = new System.Drawing.Size(75, 23);
+            this.btnGetPayPrescription.TabIndex = 5;
+            this.btnGetPayPrescription.Text = "Confirm";
+            this.btnGetPayPrescription.UseVisualStyleBackColor = true;
+            this.btnGetPayPrescription.Click += new System.EventHandler(this.btnGetPayPrescription_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(491, 13);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(55, 13);
+            this.label37.TabIndex = 4;
+            this.label37.Text = "Id Patient:";
+            // 
+            // tbxidPayPrescription
+            // 
+            this.tbxidPayPrescription.Location = new System.Drawing.Point(561, 6);
+            this.tbxidPayPrescription.Name = "tbxidPayPrescription";
+            this.tbxidPayPrescription.Size = new System.Drawing.Size(100, 20);
+            this.tbxidPayPrescription.TabIndex = 3;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(764, 358);
+            this.tabPage3.TabIndex = 7;
+            this.tabPage3.Text = "Pay Technique";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // tabControlCenter
             // 
             this.tabControlCenter.Controls.Add(this.tabPageMedical);
-            this.tabControlCenter.Controls.Add(this.tabPage2);
+            this.tabControlCenter.Controls.Add(this.tabPagePay);
             this.tabControlCenter.Controls.Add(this.tabPageReport);
             this.tabControlCenter.Location = new System.Drawing.Point(12, 0);
             this.tabControlCenter.Name = "tabControlCenter";
@@ -1629,32 +1698,53 @@
             this.ptMedicalRecord.TabStop = false;
             this.ptMedicalRecord.Click += new System.EventHandler(this.ptMedicalRecord_Click);
             // 
-            // tabPage2
+            // tabPagePay
             // 
-            this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(764, 76);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Payment costs";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPagePay.Controls.Add(this.label33);
+            this.tabPagePay.Controls.Add(this.label36);
+            this.tabPagePay.Controls.Add(this.ptPayPrescription);
+            this.tabPagePay.Controls.Add(this.pictureBox5);
+            this.tabPagePay.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePay.Name = "tabPagePay";
+            this.tabPagePay.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePay.Size = new System.Drawing.Size(764, 76);
+            this.tabPagePay.TabIndex = 1;
+            this.tabPagePay.Text = "Payment costs";
+            this.tabPagePay.UseVisualStyleBackColor = true;
             // 
-            // pictureBox6
+            // label33
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(90, 21);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 56);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 13);
+            this.label33.TabIndex = 7;
+            this.label33.Text = "Technique";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(79, 56);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(62, 13);
+            this.label36.TabIndex = 6;
+            this.label36.Text = "Prescription";
+            // 
+            // ptPayPrescription
+            // 
+            this.ptPayPrescription.Image = ((System.Drawing.Image)(resources.GetObject("ptPayPrescription.Image")));
+            this.ptPayPrescription.Location = new System.Drawing.Point(90, 17);
+            this.ptPayPrescription.Name = "ptPayPrescription";
+            this.ptPayPrescription.Size = new System.Drawing.Size(32, 32);
+            this.ptPayPrescription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptPayPrescription.TabIndex = 1;
+            this.ptPayPrescription.TabStop = false;
+            this.ptPayPrescription.Click += new System.EventHandler(this.ptPayPrescription_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(17, 21);
+            this.pictureBox5.Location = new System.Drawing.Point(17, 17);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(32, 32);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1781,6 +1871,8 @@
             this.tbReportSale.PerformLayout();
             this.tbReportTechnique.ResumeLayout(false);
             this.tbReportTechnique.PerformLayout();
+            this.tpPayPrescription.ResumeLayout(false);
+            this.tpPayPrescription.PerformLayout();
             this.tabControlCenter.ResumeLayout(false);
             this.tabPageMedical.ResumeLayout(false);
             this.tabPageMedical.PerformLayout();
@@ -1788,8 +1880,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptPrescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptTechnique)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptMedicalRecord)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.tabPagePay.ResumeLayout(false);
+            this.tabPagePay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptPayPrescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPageReport.ResumeLayout(false);
             this.tabPageReport.PerformLayout();
@@ -1859,13 +1952,13 @@
         private System.Windows.Forms.Button btnInsertPatient;
         private System.Windows.Forms.TabControl tabControlCenter;
         private System.Windows.Forms.TabPage tabPageMedical;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPagePay;
         private System.Windows.Forms.PictureBox ptMedicalRecord;
         private System.Windows.Forms.PictureBox ptTechnique;
         private System.Windows.Forms.PictureBox ptPrescription;
         private System.Windows.Forms.PictureBox ptPatient;
         private System.Windows.Forms.TabPage tabPageReport;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox ptPayPrescription;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lbStateMedicalProcess01;
         private System.Windows.Forms.Label lbStateMedicalProcess02;
@@ -1949,5 +2042,13 @@
         private System.Windows.Forms.PictureBox ptReportTechnique;
         private System.Windows.Forms.Label lbReportDocument2;
         private System.Windows.Forms.Label lbReportDocument1;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TabPage tpPayPrescription;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnGetPayPrescription;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox tbxidPayPrescription;
+        private Microsoft.Reporting.WinForms.ReportViewer rvPayPrescription;
     }
 }

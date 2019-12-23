@@ -97,6 +97,12 @@ namespace presentation_layer
                     if(pair.Value == "doctor")
                     {
                         tabControlCenter.TabPages.Remove(tabPageReport);
+                        tabControlCenter.TabPages.Remove(tabPagePay);
+                    }
+
+                    if (pair.Value == "employee")
+                    {
+                        tabControlCenter.TabPages.Remove(tabPageMedical);
                     }
                 }
             }
@@ -348,6 +354,7 @@ namespace presentation_layer
             loadSingletonDataObject();
             this.rvPrescription.RefreshReport();
             this.rvTechnique.RefreshReport();
+            this.rvPayPrescription.RefreshReport();
         }
 
         #region Patient
@@ -817,7 +824,44 @@ namespace presentation_layer
             setStateMedicalProcess(lbReportDocument1.Name);
         }
 
+        private void ptPayPrescription_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tpPayPrescription;
+        }
+
         #endregion Reports
+
+        #region Pay
+
+
+        private void btnGetPayPrescription_Click(object sender, EventArgs e)
+        {
+            DBPersonalClinicDataSetReport.PRESCRIPTIONDataTable tbl1 = new PRESCRIPTIONTableAdapter().GetDataByIdPatient(Convert.ToInt32(tbxidPayPrescription.Text));
+            string idPre = tbl1.Rows[0]["idPrescription"].ToString();
+
+            DBPersonalClinicDataSetReport.DETAIL_PRESCRIPTIONDataTable tbl2 = new DETAIL_PRESCRIPTIONTableAdapter().GetDataByIdPrescription(Convert.ToInt32(idPre));
+            rvPayPrescription.ProcessingMode = ProcessingMode.Local;
+            rvPayPrescription.LocalReport.ReportPath = "D:\\repository\\appdesk-personal-clinic\\appdesk_personal_clinic\\presentation_layer\\payPrescription.rdlc";
+
+            if (tbl1.Rows.Count > 0 && tbl1.Rows.Count > 0)
+            {
+                ReportDataSource reportDataSource1 = new ReportDataSource();
+                reportDataSource1.Name = "DataSetPayPrescription";
+                reportDataSource1.Value = tbl1;
+
+                ReportDataSource reportDataSource2 = new ReportDataSource();
+                reportDataSource2.Name = "DataSetPayDetailPre";
+                reportDataSource2.Value = tbl2;
+
+                rvPayPrescription.LocalReport.DataSources.Clear();
+                rvPayPrescription.LocalReport.DataSources.Add(reportDataSource1);
+                rvPayPrescription.LocalReport.DataSources.Add(reportDataSource2);
+                rvPayPrescription.RefreshReport();
+            }
+            return;
+        }
+
+        #endregion Pay
 
         #endregion Events
     }
