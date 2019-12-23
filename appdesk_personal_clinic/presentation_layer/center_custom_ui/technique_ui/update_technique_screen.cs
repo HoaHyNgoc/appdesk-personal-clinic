@@ -153,6 +153,7 @@ namespace presentation_layer.center_custom_ui.technique_ui
                 lbidDoctor.Text,
                 nudSumPriceTechnique.Value.ToString(),
                 tbxidPatientTechnique.Text,
+                DateTime.Now.ToString("yyyy-MM-dd"),
                 lbidTechnique.Text
                 );
 

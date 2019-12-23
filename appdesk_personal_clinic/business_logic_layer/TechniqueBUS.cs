@@ -35,6 +35,7 @@ namespace business_logic_layer
             string idDoctor,
             string price,
             string idPatient,
+            string xtime,
             string originalIdTechnique)
         {
 
@@ -42,6 +43,7 @@ namespace business_logic_layer
             currentTechniqueDatarow.IdDoctor = Convert.ToInt32(idDoctor);
             currentTechniqueDatarow.Price = Convert.ToDecimal(price);
             currentTechniqueDatarow.IdPatient = Convert.ToInt32(idPatient);
+            currentTechniqueDatarow.DateTime = Convert.ToDateTime(xtime);
             currentTechniqueDatarow.IdTechnique = Convert.ToInt32(originalIdTechnique);
 
             return techniqueDal.updateCoreTechnique(currentTechniqueDatarow);
@@ -50,13 +52,15 @@ namespace business_logic_layer
         public int insertTechnique(
             string idDoctor,
             string price,
-            string idPatient)
+            string idPatient,
+            string xtime)
         {
 
             TechniqueDTO currentTechniqueDatarow = new TechniqueDTO();
             currentTechniqueDatarow.IdDoctor = Convert.ToInt32(idDoctor);
             currentTechniqueDatarow.Price = Convert.ToDecimal(price);
             currentTechniqueDatarow.IdPatient = Convert.ToInt32(idPatient);
+            currentTechniqueDatarow.DateTime = Convert.ToDateTime(xtime);
 
             return techniqueDal.insertCoreTechnique(currentTechniqueDatarow);
         }

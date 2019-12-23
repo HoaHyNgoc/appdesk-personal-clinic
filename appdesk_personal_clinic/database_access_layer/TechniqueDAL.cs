@@ -32,6 +32,7 @@ namespace database_access_layer
                 originalTechnique.IdDoctor,
                 originalTechnique.Price,
                 originalTechnique.IdPatient,
+                originalTechnique.DateTime,
                 originalTechnique.IdTechnique
                 );
 
@@ -43,7 +44,8 @@ namespace database_access_layer
             int flagInsert = new TECHNIQUETableAdapter().insertTechniqueQuery(
                 newTechnique.IdDoctor,
                 newTechnique.Price,
-                newTechnique.IdPatient
+                newTechnique.IdPatient,
+                newTechnique.DateTime
                 );
 
             return flagInsert;

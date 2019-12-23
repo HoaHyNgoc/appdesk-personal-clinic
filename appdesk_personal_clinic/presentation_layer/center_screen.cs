@@ -31,6 +31,7 @@ namespace presentation_layer
 
         List<Control> listMedicalProcess = new List<Control>();
         List<DetailTechniqueDTO> stateListDetailTechnique = new List<DetailTechniqueDTO>();
+        Dictionary<string, string> dicUser = new Dictionary<string, string>();
         decimal sumPriceTechnique = 0;
         decimal sumPricePrescription = 0;
         
@@ -66,6 +67,13 @@ namespace presentation_layer
             initSwitchMenuOption();
         }
 
+        public center_screen(Dictionary<string, string> _dicUser)
+        {
+            this.dicUser = _dicUser;
+            InitializeComponent();
+            initSwitchMenuOption();
+        }
+
         #region Methods
 
         #region Global methods
@@ -81,11 +89,23 @@ namespace presentation_layer
         }
 
         public void initSwitchMenuOption()
-        {         
+        {
+            foreach (var pair in dicUser)
+            {
+                if (pair.Key == "actor")
+                {
+                    if(pair.Value == "doctor")
+                    {
+                        tabControlCenter.TabPages.Remove(tabPageReport);
+                    }
+                }
+            }
             listMedicalProcess.Add(lbStateMedicalProcess01);
             listMedicalProcess.Add(lbStateMedicalProcess02);
             listMedicalProcess.Add(lbStateMedicalProcess03);
             listMedicalProcess.Add(lbStateMedicalProcess04);
+            listMedicalProcess.Add(lbReportDocument1);
+            listMedicalProcess.Add(lbReportDocument2);
         }
 
         #endregion Global methods
@@ -327,6 +347,7 @@ namespace presentation_layer
         {
             loadSingletonDataObject();
             this.rvPrescription.RefreshReport();
+            this.rvTechnique.RefreshReport();
         }
 
         #region Patient
@@ -511,6 +532,7 @@ namespace presentation_layer
                         techniqueDTO.IdDoctor.ToString(),
                         nudSumPriceTechnique.Value.ToString(),
                         techniqueDTO.IdPatient.ToString(),
+                        DateTime.Now.ToString("yyyy-MM-dd"),
                         techniqueDTO.IdTechnique.ToString());
 
                     resetControlDetailTechnique();
@@ -550,7 +572,8 @@ namespace presentation_layer
             techniqueBUS.insertTechnique(
                 cbxTechniqueDoctor.SelectedValue.ToString(),
                 "0",
-                tbxidPatientTechnique.Text
+                tbxidPatientTechnique.Text,
+                DateTime.Now.ToString("yyyy-MM-dd")
                 );
 
             MessageBox.Show("Data technique inserted...", "Messager", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -742,18 +765,6 @@ namespace presentation_layer
             setStateMedicalProcess(lbStateMedicalProcess04.Name);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         #endregion Medical process
 
         #region Reports
@@ -776,9 +787,38 @@ namespace presentation_layer
             }
         }
 
+        private void btnCreateReportTechnique_Click(object sender, EventArgs e)
+        {
+            DBPersonalClinicDataSetReport.TECHNIQUEDataTable tblTec = new TECHNIQUETableAdapter().GetDataByTime(dtpReportTechnique.Value.Month);
+            rvTechnique.ProcessingMode = ProcessingMode.Local;
+            rvTechnique.LocalReport.ReportPath = "D:\\repository\\appdesk-personal-clinic\\appdesk_personal_clinic\\presentation_layer\\reportTechnique.rdlc";
+
+            if(tblTec.Rows.Count > 0)
+            {
+                ReportDataSource reportDataSource2 = new ReportDataSource();
+                reportDataSource2.Name = "DataSetTechniqueRP";
+                reportDataSource2.Value = tblTec;
+
+                rvTechnique.LocalReport.DataSources.Clear();
+                rvTechnique.LocalReport.DataSources.Add(reportDataSource2);
+                rvTechnique.RefreshReport();
+            }
+        }
+
+        private void ptReportTechnique_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tbReportTechnique;
+            setStateMedicalProcess(lbReportDocument2.Name);
+        }
+
+        private void ptReportPrescription_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tbReportSale;
+            setStateMedicalProcess(lbReportDocument1.Name);
+        }
+
         #endregion Reports
 
         #endregion Events
-
     }
 }

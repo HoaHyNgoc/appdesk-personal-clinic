@@ -12,10 +12,12 @@ namespace data_transfer_object
         public int idDoctor;
         public decimal price;
         public int idPatient;
+        public DateTime dateTime;
 
         public int IdTechnique { get => idTechnique; set => idTechnique = value; }
         public int IdDoctor { get => idDoctor; set => idDoctor = value; }
         public decimal Price { get => price; set => price = value; }
         public int IdPatient { get => idPatient; set => idPatient = value; }
+        public DateTime DateTime { get => dateTime; set => dateTime = value; }
     }
 }
